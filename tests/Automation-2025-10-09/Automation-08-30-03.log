@@ -1,0 +1,869 @@
+09/10/2025 08:30:13 AM - LoginPage - INFO: Element found with locator : //button[@id="login-submit"]and locatortype : xpath
+09/10/2025 08:30:13 AM - LoginPage - INFO: Element is present with locator: //button[@id="login-submit"] locatorType: xpath
+09/10/2025 08:30:13 AM - LoginPage - INFO: Element found with locator : //span[contains(text(),"SIGN IN")]and locatortype : xpath
+09/10/2025 08:30:13 AM - LoginPage - ERROR: Element is not displayed
+09/10/2025 08:30:13 AM - LoginPage - INFO: Element found with locator : //span[contains(text(),"SIGN IN")]and locatortype : xpath
+09/10/2025 08:30:13 AM - LoginPage - INFO: Element is present with locator: //span[contains(text(),"SIGN IN")] locatorType: xpath
+09/10/2025 08:30:13 AM - LoginPage - INFO: WebUrl is accessible
+09/10/2025 08:30:14 AM - LoginPage - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:30:14 AM - LoginPage - INFO: Element did not appeard on the webpage ://input[@name="username"]
+09/10/2025 08:30:14 AM - LoginPage - INFO: Element found with locator : //input[@name="username"]and locatortype : xpath
+09/10/2025 08:30:16 AM - LoginPage - INFO: Sent data on element with locator: //input[@name="username"] locatorType: xpath
+09/10/2025 08:30:17 AM - LoginPage - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:30:17 AM - LoginPage - INFO: Element did not appeard on the webpage ://input[@name="password"]
+09/10/2025 08:30:17 AM - LoginPage - INFO: Element found with locator : //input[@name="password"]and locatortype : xpath
+09/10/2025 08:30:18 AM - LoginPage - INFO: Sent data on element with locator: //input[@name="password"] locatorType: xpath
+09/10/2025 08:30:18 AM - LoginPage - INFO: waiting for max :: 6:: second for the element
+09/10/2025 08:30:18 AM - LoginPage - INFO: Element did not appeard on the webpage ://button[@id="login-submit"]
+09/10/2025 08:30:18 AM - LoginPage - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:30:18 AM - LoginPage - INFO: Element did not appeard on the webpage ://button[@id="login-submit"]
+09/10/2025 08:30:18 AM - LoginPage - ERROR: Element is not displayed
+09/10/2025 08:30:18 AM - LoginPage - INFO: Element found with locator : //button[@id="login-submit"]and locatortype : xpath
+09/10/2025 08:30:18 AM - LoginPage - INFO: Element exists on the page with locator : //button[@id="login-submit"]
+09/10/2025 08:30:18 AM - LoginPage - INFO: Element found with locator : //button[@id="login-submit"]and locatortype : xpath
+09/10/2025 08:30:18 AM - LoginPage - INFO: Clicked on element with locator: //button[@id="login-submit"] locatorType: xpath
+09/10/2025 08:30:48 AM - LoginPage - ERROR: Element not found with locator : //a/i[@title="Sign out"]and locatortype : xpath
+09/10/2025 08:30:48 AM - LoginPage - ERROR: Element is not present with locator: //a/i[@title="Sign out"] locatorType: xpath
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="modal-cancel-btn"]and locatortype : xpath
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="modal-cancel-btn"]and locatortype : xpath
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //button[@id="modal-cancel-btn"] locatorType: xpath
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="modal-cancel-btn"]and locatortype : xpath
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //button[@id="modal-cancel-btn"]
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://button[@id="modal-cancel-btn"]
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="modal-cancel-btn"]and locatortype : xpath
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //button[@id="modal-cancel-btn"]
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="modal-cancel-btn"]and locatortype : xpath
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //button[@id="modal-cancel-btn"] locatorType: xpath
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[@id="inventory"]
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[@id="inventory"]
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[@id="inventory"] locatorType: xpath
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[contains(text(),"Block Dashboard")]
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"Block Dashboard")]and locatortype : xpath
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[contains(text(),"Block Dashboard")]
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"Block Dashboard")]and locatortype : xpath
+09/10/2025 08:30:48 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[contains(text(),"Block Dashboard")] locatorType: xpath
+09/10/2025 08:30:50 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@data-click='searchOpen']and locatortype : xpath
+09/10/2025 08:30:50 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:30:50 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@data-click='searchOpen']and locatortype : xpath
+09/10/2025 08:30:50 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@data-click='searchOpen'] locatorType: xpath
+09/10/2025 08:30:50 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@data-click='searchOpen']and locatortype : xpath
+09/10/2025 08:30:50 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@data-click='searchOpen']
+09/10/2025 08:30:50 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:30:50 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@data-click='searchOpen']
+09/10/2025 08:30:50 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:30:50 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@data-click='searchOpen']and locatortype : xpath
+09/10/2025 08:30:50 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@data-click='searchOpen']
+09/10/2025 08:30:50 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@data-click='searchOpen']and locatortype : xpath
+09/10/2025 08:30:50 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@data-click='searchOpen'] locatorType: xpath
+09/10/2025 08:30:52 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:30:52 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:30:52 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:30:52 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status'] locatorType: xpath
+09/10/2025 08:30:52 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:30:52 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']
+09/10/2025 08:30:52 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:30:52 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:30:52 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']
+09/10/2025 08:30:52 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:30:53 AM - NavigationBasePageMenuMap - ERROR: Cannot click on the element with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status'] locatorType: xpath
+09/10/2025 08:30:53 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:30:54 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']
+09/10/2025 08:30:54 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:30:55 AM - NavigationBasePageMenuMap - INFO: Cannot send data on the element with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status'] locatorType: xpath
+09/10/2025 08:30:55 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:30:55 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://input[@placeholder='Select a Status']
+09/10/2025 08:30:55 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:30:56 AM - NavigationBasePageMenuMap - INFO: Cannot send data on the element with locator: //input[@placeholder='Select a Status'] locatorType: xpath
+09/10/2025 08:30:56 AM - NavigationBasePageMenuMap - INFO: Element list found with locator: //div[@id='w2overlay-grid_BlkInventory-Table_field_1_menu']//div[@class='menu-text'] and locatorType: xpath
+09/10/2025 08:30:56 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:30:56 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:30:56 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:30:56 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source'] locatorType: xpath
+09/10/2025 08:30:56 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:30:56 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']
+09/10/2025 08:30:56 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:30:56 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:30:56 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']
+09/10/2025 08:30:56 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:30:57 AM - NavigationBasePageMenuMap - ERROR: Cannot click on the element with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source'] locatorType: xpath
+09/10/2025 08:30:57 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:30:57 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']
+09/10/2025 08:30:57 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:30:58 AM - NavigationBasePageMenuMap - INFO: Cannot send data on the element with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source'] locatorType: xpath
+09/10/2025 08:30:58 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:30:58 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://input[@placeholder='Select a Source']
+09/10/2025 08:30:58 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:30:59 AM - NavigationBasePageMenuMap - INFO: Cannot send data on the element with locator: //input[@placeholder='Select a Source'] locatorType: xpath
+09/10/2025 08:30:59 AM - NavigationBasePageMenuMap - INFO: Element list found with locator: //div[@id='w2overlay-grid_BlkInventory-Table_field_5_menu']//div[@class='menu-text'] and locatorType: xpath
+09/10/2025 08:31:07 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:07 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:31:07 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:07 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:31:07 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:31:07 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:31:07 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')] locatorType: xpath
+09/10/2025 08:31:09 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:09 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:31:09 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:09 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:31:09 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:31:09 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:31:10 AM - NavigationBasePageMenuMap - ERROR: Cannot click on the element with locator: //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')] locatorType: xpath
+09/10/2025 08:31:12 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:12 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:31:12 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:12 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:31:12 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:31:12 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:31:12 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')] locatorType: xpath
+09/10/2025 08:31:17 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:17 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://button[@id="BlockDashboard-close"]/i
+09/10/2025 08:31:17 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:17 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="BlockDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:31:17 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //button[@id="BlockDashboard-close"]/i
+09/10/2025 08:31:17 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="BlockDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:31:17 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //button[@id="BlockDashboard-close"]/i locatorType: xpath
+09/10/2025 08:31:21 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:21 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[@id="inventory"]
+09/10/2025 08:31:21 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:21 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:31:21 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[@id="inventory"]
+09/10/2025 08:31:21 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:31:21 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[@id="inventory"] locatorType: xpath
+09/10/2025 08:31:21 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:21 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[contains(text(),"Block Dashboard")]
+09/10/2025 08:31:21 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:21 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"Block Dashboard")]and locatortype : xpath
+09/10/2025 08:31:21 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[contains(text(),"Block Dashboard")]
+09/10/2025 08:31:21 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"Block Dashboard")]and locatortype : xpath
+09/10/2025 08:31:21 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[contains(text(),"Block Dashboard")] locatorType: xpath
+09/10/2025 08:31:23 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@data-click='searchOpen']and locatortype : xpath
+09/10/2025 08:31:23 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:23 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@data-click='searchOpen']and locatortype : xpath
+09/10/2025 08:31:23 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@data-click='searchOpen'] locatorType: xpath
+09/10/2025 08:31:23 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@data-click='searchOpen']and locatortype : xpath
+09/10/2025 08:31:23 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@data-click='searchOpen']
+09/10/2025 08:31:23 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:23 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@data-click='searchOpen']
+09/10/2025 08:31:23 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:23 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@data-click='searchOpen']and locatortype : xpath
+09/10/2025 08:31:23 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@data-click='searchOpen']
+09/10/2025 08:31:23 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@data-click='searchOpen']and locatortype : xpath
+09/10/2025 08:31:23 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@data-click='searchOpen'] locatorType: xpath
+09/10/2025 08:31:25 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:31:25 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:25 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:31:25 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status'] locatorType: xpath
+09/10/2025 08:31:25 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:25 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']
+09/10/2025 08:31:25 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:25 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:31:25 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']
+09/10/2025 08:31:25 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:31:26 AM - NavigationBasePageMenuMap - ERROR: Cannot click on the element with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status'] locatorType: xpath
+09/10/2025 08:31:26 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:26 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']
+09/10/2025 08:31:26 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:31:27 AM - NavigationBasePageMenuMap - INFO: Cannot send data on the element with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status'] locatorType: xpath
+09/10/2025 08:31:27 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:27 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://input[@placeholder='Select a Status']
+09/10/2025 08:31:27 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:31:29 AM - NavigationBasePageMenuMap - INFO: Cannot send data on the element with locator: //input[@placeholder='Select a Status'] locatorType: xpath
+09/10/2025 08:31:29 AM - NavigationBasePageMenuMap - INFO: Element list found with locator: //div[@id='w2overlay-grid_BlkInventory-Table_field_1_menu']//div[@class='menu-text'] and locatorType: xpath
+09/10/2025 08:31:29 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:31:29 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:29 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:31:29 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source'] locatorType: xpath
+09/10/2025 08:31:29 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:29 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']
+09/10/2025 08:31:29 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:29 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:31:29 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']
+09/10/2025 08:31:29 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:31:30 AM - NavigationBasePageMenuMap - ERROR: Cannot click on the element with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source'] locatorType: xpath
+09/10/2025 08:31:30 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:30 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']
+09/10/2025 08:31:30 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:31:31 AM - NavigationBasePageMenuMap - INFO: Cannot send data on the element with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source'] locatorType: xpath
+09/10/2025 08:31:31 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:31 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://input[@placeholder='Select a Source']
+09/10/2025 08:31:31 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:31:32 AM - NavigationBasePageMenuMap - INFO: Cannot send data on the element with locator: //input[@placeholder='Select a Source'] locatorType: xpath
+09/10/2025 08:31:32 AM - NavigationBasePageMenuMap - INFO: Element list found with locator: //div[@id='w2overlay-grid_BlkInventory-Table_field_5_menu']//div[@class='menu-text'] and locatorType: xpath
+09/10/2025 08:31:39 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:39 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:31:39 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:39 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:31:39 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:31:39 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:31:40 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')] locatorType: xpath
+09/10/2025 08:31:42 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:42 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:31:42 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:42 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:31:42 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:31:42 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:31:42 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')] locatorType: xpath
+09/10/2025 08:31:44 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:44 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:31:44 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:44 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:31:44 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:31:44 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:31:44 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')] locatorType: xpath
+09/10/2025 08:31:49 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:49 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://button[@id="BlockDashboard-close"]/i
+09/10/2025 08:31:49 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:49 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="BlockDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:31:49 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //button[@id="BlockDashboard-close"]/i
+09/10/2025 08:31:49 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="BlockDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:31:49 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //button[@id="BlockDashboard-close"]/i locatorType: xpath
+09/10/2025 08:31:53 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:53 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[@id="inventory"]
+09/10/2025 08:31:53 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:53 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:31:53 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[@id="inventory"]
+09/10/2025 08:31:53 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:31:53 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[@id="inventory"] locatorType: xpath
+09/10/2025 08:31:53 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:53 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[contains(text(),"Block Dashboard")]
+09/10/2025 08:31:53 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:53 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"Block Dashboard")]and locatortype : xpath
+09/10/2025 08:31:53 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[contains(text(),"Block Dashboard")]
+09/10/2025 08:31:53 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"Block Dashboard")]and locatortype : xpath
+09/10/2025 08:31:53 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[contains(text(),"Block Dashboard")] locatorType: xpath
+09/10/2025 08:31:55 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@data-click='searchOpen']and locatortype : xpath
+09/10/2025 08:31:55 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:55 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@data-click='searchOpen']and locatortype : xpath
+09/10/2025 08:31:55 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@data-click='searchOpen'] locatorType: xpath
+09/10/2025 08:31:55 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@data-click='searchOpen']and locatortype : xpath
+09/10/2025 08:31:55 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@data-click='searchOpen']
+09/10/2025 08:31:55 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:55 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@data-click='searchOpen']
+09/10/2025 08:31:55 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:55 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@data-click='searchOpen']and locatortype : xpath
+09/10/2025 08:31:55 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@data-click='searchOpen']
+09/10/2025 08:31:55 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@data-click='searchOpen']and locatortype : xpath
+09/10/2025 08:31:55 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@data-click='searchOpen'] locatorType: xpath
+09/10/2025 08:31:57 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:31:57 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:57 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:31:57 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status'] locatorType: xpath
+09/10/2025 08:31:57 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:57 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']
+09/10/2025 08:31:57 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:31:57 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:31:57 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']
+09/10/2025 08:31:57 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:31:58 AM - NavigationBasePageMenuMap - ERROR: Cannot click on the element with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status'] locatorType: xpath
+09/10/2025 08:31:58 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:31:58 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']
+09/10/2025 08:31:58 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:32:00 AM - NavigationBasePageMenuMap - INFO: Cannot send data on the element with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Status'] locatorType: xpath
+09/10/2025 08:32:00 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:00 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://input[@placeholder='Select a Status']
+09/10/2025 08:32:00 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //input[@placeholder='Select a Status']and locatortype : xpath
+09/10/2025 08:32:01 AM - NavigationBasePageMenuMap - INFO: Cannot send data on the element with locator: //input[@placeholder='Select a Status'] locatorType: xpath
+09/10/2025 08:32:01 AM - NavigationBasePageMenuMap - INFO: Element list found with locator: //div[@id='w2overlay-grid_BlkInventory-Table_field_1_menu']//div[@class='menu-text'] and locatorType: xpath
+09/10/2025 08:32:01 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:32:01 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:01 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:32:01 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source'] locatorType: xpath
+09/10/2025 08:32:01 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:01 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']
+09/10/2025 08:32:01 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:01 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:32:01 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']
+09/10/2025 08:32:01 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:32:02 AM - NavigationBasePageMenuMap - ERROR: Cannot click on the element with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source'] locatorType: xpath
+09/10/2025 08:32:02 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:02 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']
+09/10/2025 08:32:02 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:32:03 AM - NavigationBasePageMenuMap - INFO: Cannot send data on the element with locator: //div[@class='w2ui-field-helper w2ui-list']/following-sibling::input[@placeholder='Select a Source'] locatorType: xpath
+09/10/2025 08:32:03 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:03 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://input[@placeholder='Select a Source']
+09/10/2025 08:32:03 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //input[@placeholder='Select a Source']and locatortype : xpath
+09/10/2025 08:32:04 AM - NavigationBasePageMenuMap - INFO: Cannot send data on the element with locator: //input[@placeholder='Select a Source'] locatorType: xpath
+09/10/2025 08:32:05 AM - NavigationBasePageMenuMap - INFO: Element list found with locator: //div[@id='w2overlay-grid_BlkInventory-Table_field_5_menu']//div[@class='menu-text'] and locatorType: xpath
+09/10/2025 08:32:12 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:12 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:32:12 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:12 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:32:12 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:32:12 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:32:12 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')] locatorType: xpath
+09/10/2025 08:32:14 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:14 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:32:14 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:14 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:32:14 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:32:14 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:32:14 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')] locatorType: xpath
+09/10/2025 08:32:16 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:16 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:32:16 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:16 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:32:16 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]
+09/10/2025 08:32:16 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]and locatortype : xpath
+09/10/2025 08:32:16 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')] locatorType: xpath
+09/10/2025 08:32:21 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:21 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://button[@id="BlockDashboard-close"]/i
+09/10/2025 08:32:21 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:21 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="BlockDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:32:21 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //button[@id="BlockDashboard-close"]/i
+09/10/2025 08:32:21 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="BlockDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:32:21 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //button[@id="BlockDashboard-close"]/i locatorType: xpath
+09/10/2025 08:32:25 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:25 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[@id="inventory"]
+09/10/2025 08:32:25 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:25 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:32:25 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[@id="inventory"]
+09/10/2025 08:32:25 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:32:25 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[@id="inventory"] locatorType: xpath
+09/10/2025 08:32:25 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:25 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[contains(text(),"TN Dashboard")]
+09/10/2025 08:32:25 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:25 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:32:25 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[contains(text(),"TN Dashboard")]
+09/10/2025 08:32:25 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:32:26 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[contains(text(),"TN Dashboard")] locatorType: xpath
+09/10/2025 08:32:28 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:32:28 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:28 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:32:28 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:32:28 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:32:28 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:32:28 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:28 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:32:28 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:28 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:32:28 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:32:28 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:32:28 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:32:30 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:32:30 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:30 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:32:30 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:32:30 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:30 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://tr[1]/td/input[@rel='search']
+09/10/2025 08:32:30 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:32:31 AM - NavigationBasePageMenuMap - INFO: Sent data on element with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:32:31 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:32:31 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:31 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://td[contains(text(),'Requester')]/following-sibling::td/select
+09/10/2025 08:32:31 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:32:31 AM - NavigationBasePageMenuMap - INFO: element is selected : //td[contains(text(),'Requester')]/following-sibling::td/select value: contains
+09/10/2025 08:32:37 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[2]/div/divand locatortype : xpath
+09/10/2025 08:32:37 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:32:37 AM - NavigationBasePageMenuMap - INFO: The text is :: '913-450-2997'
+09/10/2025 08:32:37 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[9]/divand locatortype : xpath
+09/10/2025 08:32:37 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:32:37 AM - NavigationBasePageMenuMap - INFO: The text is :: 'KANSAS CITY MISSOURI'
+09/10/2025 08:32:38 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[@id='grid_TnInventory-Table_data_0_17']/div/divand locatortype : xpath
+09/10/2025 08:32:38 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:38 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://button[@id="TnDashboard-close"]/i
+09/10/2025 08:32:38 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:38 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:32:38 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //button[@id="TnDashboard-close"]/i
+09/10/2025 08:32:38 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:32:38 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //button[@id="TnDashboard-close"]/i locatorType: xpath
+09/10/2025 08:32:40 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:40 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[@id="inventory"]
+09/10/2025 08:32:40 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:40 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:32:40 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[@id="inventory"]
+09/10/2025 08:32:40 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:32:40 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[@id="inventory"] locatorType: xpath
+09/10/2025 08:32:40 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:40 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[contains(text(),"TN Dashboard")]
+09/10/2025 08:32:40 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:40 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:32:40 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[contains(text(),"TN Dashboard")]
+09/10/2025 08:32:40 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:32:40 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[contains(text(),"TN Dashboard")] locatorType: xpath
+09/10/2025 08:32:42 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:32:42 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:42 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:32:42 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:32:42 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:32:42 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:32:42 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:42 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:32:42 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:43 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:32:43 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:32:43 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:32:43 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:32:45 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:32:45 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:45 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:32:45 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:32:45 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:45 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://tr[1]/td/input[@rel='search']
+09/10/2025 08:32:45 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:32:46 AM - NavigationBasePageMenuMap - INFO: Sent data on element with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:32:46 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:32:46 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:46 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://td[contains(text(),'Requester')]/following-sibling::td/select
+09/10/2025 08:32:46 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:32:46 AM - NavigationBasePageMenuMap - INFO: element is selected : //td[contains(text(),'Requester')]/following-sibling::td/select value: contains
+09/10/2025 08:32:52 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[2]/div/divand locatortype : xpath
+09/10/2025 08:32:52 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:32:52 AM - NavigationBasePageMenuMap - INFO: The text is :: '728-226-4997'
+09/10/2025 08:32:52 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[9]/divand locatortype : xpath
+09/10/2025 08:32:52 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:32:52 AM - NavigationBasePageMenuMap - INFO: The text is :: 'SOUTHEAST FLORIDA'
+09/10/2025 08:32:53 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[@id='grid_TnInventory-Table_data_0_17']/div/divand locatortype : xpath
+09/10/2025 08:32:53 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:53 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://button[@id="TnDashboard-close"]/i
+09/10/2025 08:32:53 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:53 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:32:53 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //button[@id="TnDashboard-close"]/i
+09/10/2025 08:32:53 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:32:53 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //button[@id="TnDashboard-close"]/i locatorType: xpath
+09/10/2025 08:32:55 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:55 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[@id="inventory"]
+09/10/2025 08:32:55 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:55 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:32:55 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[@id="inventory"]
+09/10/2025 08:32:55 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:32:55 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[@id="inventory"] locatorType: xpath
+09/10/2025 08:32:55 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:55 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[contains(text(),"TN Dashboard")]
+09/10/2025 08:32:55 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:55 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:32:55 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[contains(text(),"TN Dashboard")]
+09/10/2025 08:32:55 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:32:55 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[contains(text(),"TN Dashboard")] locatorType: xpath
+09/10/2025 08:32:57 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:32:57 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:57 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:32:57 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:32:57 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:32:57 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:32:57 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:57 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:32:57 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:57 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:32:57 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:32:57 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:32:57 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:32:59 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:32:59 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:32:59 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:32:59 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:32:59 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:32:59 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://tr[1]/td/input[@rel='search']
+09/10/2025 08:32:59 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:33:00 AM - NavigationBasePageMenuMap - INFO: Sent data on element with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:33:00 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:33:00 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:01 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://td[contains(text(),'Requester')]/following-sibling::td/select
+09/10/2025 08:33:01 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:33:01 AM - NavigationBasePageMenuMap - INFO: element is selected : //td[contains(text(),'Requester')]/following-sibling::td/select value: contains
+09/10/2025 08:33:07 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[2]/div/divand locatortype : xpath
+09/10/2025 08:33:07 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:33:07 AM - NavigationBasePageMenuMap - INFO: The text is :: '904-869-1997'
+09/10/2025 08:33:07 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[9]/divand locatortype : xpath
+09/10/2025 08:33:07 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:33:07 AM - NavigationBasePageMenuMap - INFO: The text is :: 'JACKSONVILLE FL'
+09/10/2025 08:33:08 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[@id='grid_TnInventory-Table_data_0_17']/div/divand locatortype : xpath
+09/10/2025 08:33:08 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:08 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://button[@id="TnDashboard-close"]/i
+09/10/2025 08:33:08 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:08 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:33:08 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //button[@id="TnDashboard-close"]/i
+09/10/2025 08:33:08 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:33:08 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //button[@id="TnDashboard-close"]/i locatorType: xpath
+09/10/2025 08:33:10 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:10 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[@id="inventory"]
+09/10/2025 08:33:10 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:10 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:33:10 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[@id="inventory"]
+09/10/2025 08:33:10 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:33:10 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[@id="inventory"] locatorType: xpath
+09/10/2025 08:33:10 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:10 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[contains(text(),"TN Dashboard")]
+09/10/2025 08:33:10 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:10 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:33:10 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[contains(text(),"TN Dashboard")]
+09/10/2025 08:33:10 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:33:10 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[contains(text(),"TN Dashboard")] locatorType: xpath
+09/10/2025 08:33:12 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:12 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:12 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:12 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:33:12 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:12 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:33:12 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:12 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:33:12 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:12 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:12 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:33:12 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:12 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:33:14 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:33:14 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:14 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:33:14 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:33:14 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:14 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://tr[1]/td/input[@rel='search']
+09/10/2025 08:33:14 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:33:15 AM - NavigationBasePageMenuMap - INFO: Sent data on element with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:33:15 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:33:15 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:15 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://td[contains(text(),'Requester')]/following-sibling::td/select
+09/10/2025 08:33:15 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:33:15 AM - NavigationBasePageMenuMap - INFO: element is selected : //td[contains(text(),'Requester')]/following-sibling::td/select value: contains
+09/10/2025 08:33:22 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[2]/div/divand locatortype : xpath
+09/10/2025 08:33:22 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:33:22 AM - NavigationBasePageMenuMap - INFO: The text is :: '914-691-6997'
+09/10/2025 08:33:22 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[9]/divand locatortype : xpath
+09/10/2025 08:33:22 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:33:22 AM - NavigationBasePageMenuMap - INFO: The text is :: 'NEW YORK METRO NY'
+09/10/2025 08:33:23 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[@id='grid_TnInventory-Table_data_0_17']/div/divand locatortype : xpath
+09/10/2025 08:33:23 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:23 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://button[@id="TnDashboard-close"]/i
+09/10/2025 08:33:23 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:23 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:33:23 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //button[@id="TnDashboard-close"]/i
+09/10/2025 08:33:23 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:33:23 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //button[@id="TnDashboard-close"]/i locatorType: xpath
+09/10/2025 08:33:25 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:25 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[@id="inventory"]
+09/10/2025 08:33:25 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:25 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:33:25 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[@id="inventory"]
+09/10/2025 08:33:25 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:33:25 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[@id="inventory"] locatorType: xpath
+09/10/2025 08:33:25 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:25 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[contains(text(),"TN Dashboard")]
+09/10/2025 08:33:25 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:25 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:33:25 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[contains(text(),"TN Dashboard")]
+09/10/2025 08:33:25 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:33:25 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[contains(text(),"TN Dashboard")] locatorType: xpath
+09/10/2025 08:33:27 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:27 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:27 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:27 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:33:27 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:27 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:33:27 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:27 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:33:27 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:27 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:27 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:33:27 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:27 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:33:29 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:33:29 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:29 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:33:29 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:33:29 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:29 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://tr[1]/td/input[@rel='search']
+09/10/2025 08:33:29 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:33:30 AM - NavigationBasePageMenuMap - INFO: Sent data on element with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:33:30 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:33:30 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:30 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://td[contains(text(),'Requester')]/following-sibling::td/select
+09/10/2025 08:33:30 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:33:30 AM - NavigationBasePageMenuMap - INFO: element is selected : //td[contains(text(),'Requester')]/following-sibling::td/select value: contains
+09/10/2025 08:33:36 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[2]/div/divand locatortype : xpath
+09/10/2025 08:33:36 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:33:36 AM - NavigationBasePageMenuMap - INFO: The text is :: '626-745-4997'
+09/10/2025 08:33:36 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[9]/divand locatortype : xpath
+09/10/2025 08:33:36 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:33:36 AM - NavigationBasePageMenuMap - INFO: The text is :: 'LOS ANGELES CA'
+09/10/2025 08:33:37 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[@id='grid_TnInventory-Table_data_0_17']/div/divand locatortype : xpath
+09/10/2025 08:33:37 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:38 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://button[@id="TnDashboard-close"]/i
+09/10/2025 08:33:38 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:38 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:33:38 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //button[@id="TnDashboard-close"]/i
+09/10/2025 08:33:38 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:33:38 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //button[@id="TnDashboard-close"]/i locatorType: xpath
+09/10/2025 08:33:40 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:40 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[@id="inventory"]
+09/10/2025 08:33:40 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:40 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:33:40 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[@id="inventory"]
+09/10/2025 08:33:40 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:33:40 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[@id="inventory"] locatorType: xpath
+09/10/2025 08:33:40 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:40 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[contains(text(),"TN Dashboard")]
+09/10/2025 08:33:40 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:40 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:33:40 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[contains(text(),"TN Dashboard")]
+09/10/2025 08:33:40 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:33:40 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[contains(text(),"TN Dashboard")] locatorType: xpath
+09/10/2025 08:33:42 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:42 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:42 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:42 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:33:42 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:42 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:33:42 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:42 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:33:42 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:42 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:42 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:33:42 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:42 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:33:44 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:33:44 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:44 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:33:44 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:33:44 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:44 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://tr[1]/td/input[@rel='search']
+09/10/2025 08:33:44 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:33:45 AM - NavigationBasePageMenuMap - INFO: Sent data on element with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:33:45 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:33:45 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:45 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://td[contains(text(),'Requester')]/following-sibling::td/select
+09/10/2025 08:33:45 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:33:45 AM - NavigationBasePageMenuMap - INFO: element is selected : //td[contains(text(),'Requester')]/following-sibling::td/select value: contains
+09/10/2025 08:33:51 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[2]/div/divand locatortype : xpath
+09/10/2025 08:33:51 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:33:51 AM - NavigationBasePageMenuMap - INFO: The text is :: '424-790-2997'
+09/10/2025 08:33:51 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[9]/divand locatortype : xpath
+09/10/2025 08:33:51 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:33:51 AM - NavigationBasePageMenuMap - INFO: The text is :: 'LOS ANGELES CA'
+09/10/2025 08:33:52 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[@id='grid_TnInventory-Table_data_0_17']/div/divand locatortype : xpath
+09/10/2025 08:33:52 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:52 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://button[@id="TnDashboard-close"]/i
+09/10/2025 08:33:52 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:52 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:33:52 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //button[@id="TnDashboard-close"]/i
+09/10/2025 08:33:53 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:33:53 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //button[@id="TnDashboard-close"]/i locatorType: xpath
+09/10/2025 08:33:55 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:55 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[@id="inventory"]
+09/10/2025 08:33:55 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:55 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:33:55 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[@id="inventory"]
+09/10/2025 08:33:55 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:33:55 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[@id="inventory"] locatorType: xpath
+09/10/2025 08:33:55 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:55 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[contains(text(),"TN Dashboard")]
+09/10/2025 08:33:55 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:55 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:33:55 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[contains(text(),"TN Dashboard")]
+09/10/2025 08:33:55 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:33:55 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[contains(text(),"TN Dashboard")] locatorType: xpath
+09/10/2025 08:33:57 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:57 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:57 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:57 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:33:57 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:57 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:33:57 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:57 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:33:57 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:57 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:57 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:33:57 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:33:57 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:33:59 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:33:59 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:33:59 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:33:59 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:33:59 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:33:59 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://tr[1]/td/input[@rel='search']
+09/10/2025 08:33:59 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:34:00 AM - NavigationBasePageMenuMap - INFO: Sent data on element with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:34:00 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:34:00 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:00 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://td[contains(text(),'Requester')]/following-sibling::td/select
+09/10/2025 08:34:00 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:34:00 AM - NavigationBasePageMenuMap - INFO: element is selected : //td[contains(text(),'Requester')]/following-sibling::td/select value: contains
+09/10/2025 08:34:06 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[2]/div/divand locatortype : xpath
+09/10/2025 08:34:06 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:34:06 AM - NavigationBasePageMenuMap - INFO: The text is :: '224-604-2997'
+09/10/2025 08:34:06 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[9]/divand locatortype : xpath
+09/10/2025 08:34:06 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:34:06 AM - NavigationBasePageMenuMap - INFO: The text is :: 'CHICAGO ILLINOIS'
+09/10/2025 08:34:07 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[@id='grid_TnInventory-Table_data_0_17']/div/divand locatortype : xpath
+09/10/2025 08:34:07 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:07 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://button[@id="TnDashboard-close"]/i
+09/10/2025 08:34:07 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:07 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:34:07 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //button[@id="TnDashboard-close"]/i
+09/10/2025 08:34:07 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:34:07 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //button[@id="TnDashboard-close"]/i locatorType: xpath
+09/10/2025 08:34:09 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:09 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[@id="inventory"]
+09/10/2025 08:34:09 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:09 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:34:09 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[@id="inventory"]
+09/10/2025 08:34:10 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:34:10 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[@id="inventory"] locatorType: xpath
+09/10/2025 08:34:10 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:10 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[contains(text(),"TN Dashboard")]
+09/10/2025 08:34:10 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:10 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:34:10 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[contains(text(),"TN Dashboard")]
+09/10/2025 08:34:10 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:34:10 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[contains(text(),"TN Dashboard")] locatorType: xpath
+09/10/2025 08:34:12 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:34:12 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:12 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:34:12 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:34:12 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:34:12 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:34:12 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:12 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:34:12 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:12 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:34:12 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:34:12 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:34:12 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:34:14 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:34:14 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:14 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:34:14 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:34:14 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:14 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://tr[1]/td/input[@rel='search']
+09/10/2025 08:34:14 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:34:15 AM - NavigationBasePageMenuMap - INFO: Sent data on element with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:34:15 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:34:15 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:15 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://td[contains(text(),'Requester')]/following-sibling::td/select
+09/10/2025 08:34:15 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:34:15 AM - NavigationBasePageMenuMap - INFO: element is selected : //td[contains(text(),'Requester')]/following-sibling::td/select value: contains
+09/10/2025 08:34:21 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[2]/div/divand locatortype : xpath
+09/10/2025 08:34:21 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:34:21 AM - NavigationBasePageMenuMap - INFO: The text is :: '865-486-2997'
+09/10/2025 08:34:21 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[9]/divand locatortype : xpath
+09/10/2025 08:34:21 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:34:21 AM - NavigationBasePageMenuMap - INFO: The text is :: 'KNOXVILLE TENNESSEE'
+09/10/2025 08:34:22 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[@id='grid_TnInventory-Table_data_0_17']/div/divand locatortype : xpath
+09/10/2025 08:34:22 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:22 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://button[@id="TnDashboard-close"]/i
+09/10/2025 08:34:22 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:22 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:34:22 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //button[@id="TnDashboard-close"]/i
+09/10/2025 08:34:22 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:34:22 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //button[@id="TnDashboard-close"]/i locatorType: xpath
+09/10/2025 08:34:24 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:24 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[@id="inventory"]
+09/10/2025 08:34:24 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:24 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:34:24 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[@id="inventory"]
+09/10/2025 08:34:24 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:34:24 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[@id="inventory"] locatorType: xpath
+09/10/2025 08:34:24 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:25 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[contains(text(),"TN Dashboard")]
+09/10/2025 08:34:25 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:25 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:34:25 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[contains(text(),"TN Dashboard")]
+09/10/2025 08:34:25 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:34:25 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[contains(text(),"TN Dashboard")] locatorType: xpath
+09/10/2025 08:34:27 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:34:27 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:27 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:34:27 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:34:27 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:34:27 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:34:27 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:27 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:34:27 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:27 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:34:27 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:34:27 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:34:27 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:34:29 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:34:29 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:29 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:34:29 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:34:29 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:29 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://tr[1]/td/input[@rel='search']
+09/10/2025 08:34:29 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:34:30 AM - NavigationBasePageMenuMap - INFO: Sent data on element with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:34:30 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:34:30 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:30 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://td[contains(text(),'Requester')]/following-sibling::td/select
+09/10/2025 08:34:30 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:34:30 AM - NavigationBasePageMenuMap - INFO: element is selected : //td[contains(text(),'Requester')]/following-sibling::td/select value: contains
+09/10/2025 08:34:36 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[2]/div/divand locatortype : xpath
+09/10/2025 08:34:36 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:34:36 AM - NavigationBasePageMenuMap - INFO: The text is :: '726-255-0997'
+09/10/2025 08:34:36 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[9]/divand locatortype : xpath
+09/10/2025 08:34:36 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:34:36 AM - NavigationBasePageMenuMap - INFO: The text is :: 'SAN ANTONIO TEXAS'
+09/10/2025 08:34:37 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[@id='grid_TnInventory-Table_data_0_17']/div/divand locatortype : xpath
+09/10/2025 08:34:37 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:34:37 AM - NavigationBasePageMenuMap - INFO: The text is :: 'NEW CODE'
+09/10/2025 08:34:37 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:37 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://button[@id="TnDashboard-close"]/i
+09/10/2025 08:34:37 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:37 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:34:37 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //button[@id="TnDashboard-close"]/i
+09/10/2025 08:34:37 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:34:37 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //button[@id="TnDashboard-close"]/i locatorType: xpath
+09/10/2025 08:34:39 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:39 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[@id="inventory"]
+09/10/2025 08:34:39 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:39 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:34:39 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[@id="inventory"]
+09/10/2025 08:34:39 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[@id="inventory"]and locatortype : xpath
+09/10/2025 08:34:39 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[@id="inventory"] locatorType: xpath
+09/10/2025 08:34:39 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:39 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://a[contains(text(),"TN Dashboard")]
+09/10/2025 08:34:39 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:39 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:34:39 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //a[contains(text(),"TN Dashboard")]
+09/10/2025 08:34:39 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //a[contains(text(),"TN Dashboard")]and locatortype : xpath
+09/10/2025 08:34:39 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //a[contains(text(),"TN Dashboard")] locatorType: xpath
+09/10/2025 08:34:41 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:34:41 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:42 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:34:42 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:34:42 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:34:42 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:34:42 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:42 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:34:42 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:42 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:34:42 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span
+09/10/2025 08:34:42 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/spanand locatortype : xpath
+09/10/2025 08:34:42 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //div[@id='tb_TnInventory-Table_toolbar_item_w2ui-search-advanced']/div/span locatorType: xpath
+09/10/2025 08:34:44 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:34:44 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:44 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:34:44 AM - NavigationBasePageMenuMap - INFO: Element is present with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:34:44 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:44 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://tr[1]/td/input[@rel='search']
+09/10/2025 08:34:44 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[1]/td/input[@rel='search']and locatortype : xpath
+09/10/2025 08:34:45 AM - NavigationBasePageMenuMap - INFO: Sent data on element with locator: //tr[1]/td/input[@rel='search'] locatorType: xpath
+09/10/2025 08:34:45 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:34:45 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:45 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://td[contains(text(),'Requester')]/following-sibling::td/select
+09/10/2025 08:34:45 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[contains(text(),'Requester')]/following-sibling::td/selectand locatortype : xpath
+09/10/2025 08:34:45 AM - NavigationBasePageMenuMap - INFO: element is selected : //td[contains(text(),'Requester')]/following-sibling::td/select value: contains
+09/10/2025 08:34:51 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[2]/div/divand locatortype : xpath
+09/10/2025 08:34:51 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:34:51 AM - NavigationBasePageMenuMap - INFO: The text is :: '726-255-0997'
+09/10/2025 08:34:51 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //tr[@id='grid_TnInventory-Table_rec_1']/td[9]/divand locatortype : xpath
+09/10/2025 08:34:51 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:34:51 AM - NavigationBasePageMenuMap - INFO: The text is :: 'SAN ANTONIO TEXAS'
+09/10/2025 08:34:52 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //td[@id='grid_TnInventory-Table_data_0_17']/div/divand locatortype : xpath
+09/10/2025 08:34:52 AM - NavigationBasePageMenuMap - INFO: Getting text on element :: 
+09/10/2025 08:34:52 AM - NavigationBasePageMenuMap - INFO: The text is :: 'NEW CODE'
+09/10/2025 08:34:52 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+09/10/2025 08:34:52 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://button[@id="TnDashboard-close"]/i
+09/10/2025 08:34:52 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+09/10/2025 08:34:52 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:34:52 AM - NavigationBasePageMenuMap - INFO: Element exists on the page with locator : //button[@id="TnDashboard-close"]/i
+09/10/2025 08:34:52 AM - NavigationBasePageMenuMap - INFO: Element found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+09/10/2025 08:34:52 AM - NavigationBasePageMenuMap - INFO: Clicked on element with locator: //button[@id="TnDashboard-close"]/i locatorType: xpath
+09/10/2025 08:34:54 AM - Util - INFO: Wait :: '4' seconds for 
