@@ -15,6 +15,7 @@ class NavigationBasePageMenuMap(BasePage):
     # Locators
     _inventory_menu = '//a[@id="inventory"]'
     _blockDashboard = '//a[contains(text(),"Block Dashboard")]' # first element index0
+    _blockDashboardMaximize = '//button[@id="BlockDashboard-maximize"]'
     _blockDashboardClose = '//button[@id="BlockDashboard-close"]/i'
     _tnDashnoard = '//a[contains(text(),"TN Dashboard")]'
     _tnDashboardClose = '//button[@id="TnDashboard-close"]/i'
@@ -37,8 +38,8 @@ class NavigationBasePageMenuMap(BasePage):
     
     _getBlockList = "//div[@id='grid_BlkInventory-Table_records']//tr[td/div[@title='{0}']]/td//a"
     _block_number_tn_field = "//tr[1]/td/input[@rel='search']"
-    _requester_name_tn_field = "//tr[12]/td/input[@rel='search']"
-    _tn_value = "//tr[@id='grid_TnInventory-Table_rec_1']/td[2]/div/div"
+    _requester_name_tn_field = "//td[contains(text(),'Requester')]/following-sibling::td/input[@rel='search']"
+    _tn_value = "//tr[@id='grid_TnInventory-Table_rec_1']/td[2]/div"
     _lata_name = "//tr[@id='grid_TnInventory-Table_rec_1']/td[9]/div"
     _custome_val = "//td[@id='grid_TnInventory-Table_data_0_17']/div/div"
     _reqester_drop_down = "//td[contains(text(),'Requester')]/following-sibling::td/select"
@@ -63,6 +64,9 @@ class NavigationBasePageMenuMap(BasePage):
     def navigateToTnDashboardMenu(self):
         self.navigateToInventoryMenu()
         self.elementClick(locator=self._tnDashnoard, locatorType="xpath")
+
+    def maximizeblockDashboardMenu(self):
+        self.elementClick(locator=self._blockDashboardMaximize, locatorType="xpath")
         
     def closeblockDashboardMenu(self):
         self.elementClick(locator=self._blockDashboardClose, locatorType="xpath")
@@ -108,7 +112,7 @@ class NavigationBasePageMenuMap(BasePage):
         #self.isElementDisplayed(locator=self._requester_name_tn_field, locatorType="xpath")
         #self.isElementPresent(locator=self._requester_name_tn_field, locatorType="xpath")
         #self.sendKeysOnElement(requester_name,locator=self._requester_name_tn_field, locatorType="xpath")
-        self.executeJsToFillRequester(requester_name)
+        self.executeJsToFillRequester(requester_name, self._requester_name_tn_field)
         
     def getTnNumberForBlock(self):
         val = self.getText(locator=self._tn_value, locatorType="xpath")
@@ -223,6 +227,8 @@ class NavigationBasePageMenuMap(BasePage):
         masterLst = []
         for currentItem in ['Available','Pending','Guarded']:
             self.navigateToblockDashboardMenu()
+            time.sleep(2)
+            self.maximizeblockDashboardMenu()
             time.sleep(2)
             self.searchOpen()
             time.sleep(2)
