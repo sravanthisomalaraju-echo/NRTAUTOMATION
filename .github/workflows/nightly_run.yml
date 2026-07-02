@@ -1,0 +1,40 @@
+name: Nightly NRT Automation
+
+# This section schedules the run
+on:
+  schedule:
+    # Runs at 1:00 AM Mountain Time (which is 8:00 AM UTC)
+    - cron: '0 8 * * *'
+  # This allows you to click a button on GitHub to run it manually anytime
+  workflow_dispatch: 
+
+jobs:
+  run-automation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10' # Or your specific version
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install selenium webdriver-manager tabulate gspread google-auth requests urllib3
+
+      - name: Create Google Credentials File
+        # This step safely creates the JSON file on the cloud server using your secret
+        run: |
+          echo "${{ secrets.GOOGLE_CREDENTIALS }}" > configfiles/google_credentials.json
+
+      - name: Run Automation Script
+        # We pass your username and password as environment variables
+        env:
+          PORTAL_USER: ${{ secrets.NRT_USERNAME }}
+          PORTAL_PASS: ${{ secrets.NRT_PASSWORD }}
+        run: |
+          python tests/getDataTest.py
