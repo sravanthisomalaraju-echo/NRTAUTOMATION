@@ -36,7 +36,7 @@ class NavigationBasePageMenuMap(BasePage):
     
     _effective_field_coloum = "//div[@id='grid_BlkInventory-Table_columns']/table/tbody/tr/td//div[2][contains(normalize-space(.), 'Effective Date')]"
     
-    _getBlockList = "//div[@id='grid_BlkInventory-Table_records']//tr[td/div[@title='{0}']]/td//a"
+    _getBlockList = "//div[@id='grid_BlkInventory-Table_records']//tr[td[@col='10']/div[@title='{0}']]/td//a"
     _block_number_tn_field = "//tr[1]/td/input[@rel='search']"
     _requester_name_tn_field = "//td[contains(text(),'Requester')]/following-sibling::td/input[@rel='search']"
     _tn_value = "//tr[@id='grid_TnInventory-Table_rec_1']/td[2]/div"

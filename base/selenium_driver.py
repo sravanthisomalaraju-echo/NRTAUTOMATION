@@ -465,16 +465,11 @@ class SeleniumDriver():
             var results = [];
 
             rows.forEach(row => {
-                var tds = row.querySelectorAll("td");
-                var matched = false;
-
-                tds.forEach(td => {
-                    if(td.innerText.includes(date_str)) {
-                        matched = true;
-                    }
-                });
-
-                if(matched) {
+                // Instantly target ONLY the Effective Date column (col="10")
+                var effectiveDateTd = row.querySelector("td[col='10']");
+                
+                // If the column exists AND contains our target date
+                if(effectiveDateTd && effectiveDateTd.innerText.includes(date_str)) {
                     var links = row.querySelectorAll("td a");
                     links.forEach(a => results.push(a.innerText.trim()));
                 }

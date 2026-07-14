@@ -3,7 +3,8 @@ import argparse
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
+import gspread
+from google.oauth2.credentials import Credentials
 from pages.home.navigation_basepage_menu_map import NavigationBasePageMenuMap
 from utilities.teststatus import TsStatus
 import time
@@ -115,6 +116,91 @@ try:
 
         # 5. GOOGLE SHEETS CODE CAN GO HERE LATER
         # (It will execute once for every date in the loop)
+        # 5. PUSH TO GOOGLE SHEETS
+        print("Pushing extracted data to Google Sheets...")
+        try:
+            # 5a. Set up Authentication using your new Refresh Token
+            scopes = [
+                "https://www.googleapis.com/auth/spreadsheets",
+                "https://www.googleapis.com/auth/drive"
+            ]
+            
+            # Now it reads the token.json file you just generated!
+            creds = Credentials.from_authorized_user_file("token.json", scopes)
+            client = gspread.authorize(creds)
+            
+            # 5b. Connect to the specific Workbook and Tab
+            sheet_name = "Number Range Testing in MW Shift in MDT Time"
+            tab_name = "Priority Test numbers with effective dates"
+            
+            spreadsheet = client.open(sheet_name)
+            worksheet = spreadsheet.worksheet(tab_name)
+            
+            # --- SMART UPSERT LOGIC START ---
+            print("Downloading sheet data to check for existing records...")
+            
+            # 1. Download the ENTIRE sheet data in one fast API call
+            all_sheet_data = worksheet.get_all_values()
+            
+            existing_records = set()
+            tested_npa_nxx = set()
+            
+            # 2. Map out what is already in the sheet
+            for row in all_sheet_data[1:]:  # Skip the header row
+                if len(row) >= 3:
+                    # Normalize dates so "07/14/2026" matches "7/14/2026" from your sheet
+                    sheet_date = row[0].strip()
+                    parts = sheet_date.split('/')
+                    if len(parts) == 3:
+                        sheet_date = f"{int(parts[0])}/{int(parts[1])}/{parts[2]}"
+                        
+                    sheet_block = row[1].strip()
+                    sheet_tn = row[2].strip()
+                    
+                    # Store exact matches (Date, Block, TN) in our bot's memory
+                    existing_records.add((sheet_date, sheet_block, sheet_tn))
+                    
+                    # Store the first 6 digits for the "Already Tested" check
+                    if len(sheet_block) >= 6:
+                        tested_npa_nxx.add(sheet_block[:6])
+
+            # Normalize our scraped target_date to match the sheet format
+            t_parts = target_date.split('/')
+            normalized_target_date = f"{int(t_parts[0])}/{int(t_parts[1])}/{t_parts[2]}"
+
+            # 5c. Format and Filter the scraped data
+            rows_to_append = []
+            for block_number, values in data.items():
+                tn = values[0]
+                
+                # CHECK 1: Does this exact record already exist for this date?
+                if (normalized_target_date, block_number, tn) in existing_records:
+                    print(f"  -> Skipping {block_number}: Already verified in sheet for {normalized_target_date}.")
+                    continue  # This skips the block and moves to the next one!
+                
+                # CHECK 2: If it's a NEW record, check if the 6-digit NPA-NXX was tested before
+                current_npa_nxx = str(block_number)[:6]
+                if current_npa_nxx in tested_npa_nxx:
+                    status_message = "Block is already tested"
+                else:
+                    status_message = "" 
+                    tested_npa_nxx.add(current_npa_nxx) # Add it so we catch same-day duplicates too
+                
+                # row = [Col A, Col B, Col C, Col D]
+                # We use target_date to keep the format consistent with however you ran the script
+                row = [target_date, block_number, tn, status_message]
+                rows_to_append.append(row)
+                
+            # 5d. Bulk append the data to the bottom of the sheet
+            if rows_to_append:
+                worksheet.append_rows(rows_to_append)
+                print(f"✅ Successfully appended {len(rows_to_append)} NEW rows to Google Sheets for {target_date}!")
+            else:
+                print(f"✅ All records for {target_date} are already up to date in Google Sheets. No new data appended.")
+                
+        except Exception as e:
+            print(f"❌ Failed to update Google Sheets: {e}")
+                
 
         # --- THE FIX: Close the dashboard via the UI before the next loop ---
         basepagenav.closeblockDashboardMenu()
@@ -126,6 +212,20 @@ except Exception as e:
     print(f"An error occurred during execution: {e}")
 
 finally:
-    # Always close the browser when finished, even if an error occurs
-    driver.quit()
+    print("Initiating browser teardown...")
+    try:
+        # Force-close the active tab first to instantly sever the web app's connection
+        if driver:
+            driver.close()
+            utilobj.sleep(1)
+    except Exception as e:
+        pass # Ignore errors if the window is already gone
+        
+    try:
+        # Now kill the background driver process
+        if driver:
+            driver.quit()
+    except Exception as e:
+        pass
+        
     print("Browser closed successfully.")

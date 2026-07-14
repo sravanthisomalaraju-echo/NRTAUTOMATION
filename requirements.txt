@@ -2,3 +2,4 @@ selenium
 tabulate
 gspread
 google-auth
+google-auth-oauthlib
