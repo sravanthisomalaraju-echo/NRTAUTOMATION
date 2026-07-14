@@ -38,4 +38,4 @@ jobs:
           PORTAL_USER: ${{ secrets.NRT_USERNAME }}
           PORTAL_PASS: ${{ secrets.NRT_PASSWORD }}
         run: |
-          python tests/getDataTest.py
+          python -u tests/getDataTest.py
