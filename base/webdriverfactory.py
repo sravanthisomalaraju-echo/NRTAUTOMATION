@@ -41,10 +41,10 @@ class WebDriverFactory():
                 print("Local environment detected: Running Visible Browser")
             
             # Pass the options into the driver creation
-            driver = webdriver.Chrome(
-                service=Service(ChromeDriverManager().install()), 
-                options=chrome_options
-            )
+            # --- THIS IS THE CRUCIAL LINE WE CHANGED ---
+            # We removed the webdriver-manager completely!
+            driver = webdriver.Chrome(options=chrome_options)
+            # -------------------------------------------
             
             driver.maximize_window()
             driver.implicitly_wait(30)

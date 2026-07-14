@@ -1,0 +1,4 @@
+selenium
+tabulate
+gspread
+google-auth

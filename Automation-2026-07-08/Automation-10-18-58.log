@@ -1,0 +1,26 @@
+08/07/2026 10:19:10 AM - LoginPage - INFO: Element found with locator : //button[@id="login-submit"]and locatortype : xpath
+08/07/2026 10:19:10 AM - LoginPage - INFO: Element is present with locator: //button[@id="login-submit"] locatorType: xpath
+08/07/2026 10:19:10 AM - LoginPage - INFO: Element found with locator : //span[contains(text(),"SIGN IN")]and locatortype : xpath
+08/07/2026 10:19:10 AM - LoginPage - ERROR: Element is not displayed
+08/07/2026 10:19:10 AM - LoginPage - INFO: Element found with locator : //span[contains(text(),"SIGN IN")]and locatortype : xpath
+08/07/2026 10:19:10 AM - LoginPage - INFO: Element is present with locator: //span[contains(text(),"SIGN IN")] locatorType: xpath
+08/07/2026 10:19:10 AM - LoginPage - INFO: WebUrl is accessible
+08/07/2026 10:19:11 AM - LoginPage - INFO: waiting for max :: 10:: second for the element
+08/07/2026 10:19:11 AM - LoginPage - INFO: Element did not appeard on the webpage ://input[@name="username"]
+08/07/2026 10:19:11 AM - LoginPage - INFO: Element found with locator : //input[@name="username"]and locatortype : xpath
+08/07/2026 10:19:12 AM - LoginPage - INFO: Sent data on element with locator: //input[@name="username"] locatorType: xpath
+08/07/2026 10:19:13 AM - LoginPage - INFO: waiting for max :: 10:: second for the element
+08/07/2026 10:19:13 AM - LoginPage - INFO: Element did not appeard on the webpage ://input[@name="password"]
+08/07/2026 10:19:13 AM - LoginPage - INFO: Element found with locator : //input[@name="password"]and locatortype : xpath
+08/07/2026 10:19:14 AM - LoginPage - INFO: Sent data on element with locator: //input[@name="password"] locatorType: xpath
+08/07/2026 10:19:14 AM - LoginPage - INFO: waiting for max :: 6:: second for the element
+08/07/2026 10:19:14 AM - LoginPage - INFO: Element did not appeard on the webpage ://button[@id="login-submit"]
+08/07/2026 10:19:14 AM - LoginPage - INFO: waiting for max :: 10:: second for the element
+08/07/2026 10:19:14 AM - LoginPage - INFO: Element did not appeard on the webpage ://button[@id="login-submit"]
+08/07/2026 10:19:14 AM - LoginPage - ERROR: Element is not displayed
+08/07/2026 10:19:14 AM - LoginPage - INFO: Element found with locator : //button[@id="login-submit"]and locatortype : xpath
+08/07/2026 10:19:14 AM - LoginPage - INFO: Element exists on the page with locator : //button[@id="login-submit"]
+08/07/2026 10:19:14 AM - LoginPage - INFO: Element found with locator : //button[@id="login-submit"]and locatortype : xpath
+08/07/2026 10:19:14 AM - LoginPage - INFO: Clicked on element with locator: //button[@id="login-submit"] locatorType: xpath
+08/07/2026 10:19:15 AM - LoginPage - INFO: Element found with locator : //a/i[@title="Sign out"]and locatortype : xpath
+08/07/2026 10:19:15 AM - LoginPage - INFO: Element is present with locator: //a/i[@title="Sign out"] locatorType: xpath
