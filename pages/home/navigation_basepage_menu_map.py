@@ -59,6 +59,7 @@ class NavigationBasePageMenuMap(BasePage):
         
     def navigateToblockDashboardMenu(self):
         self.navigateToInventoryMenu()
+        time.sleep(5)
         self.elementClick(locator=self._blockDashboard, locatorType="xpath")
 
     def navigateToTnDashboardMenu(self):

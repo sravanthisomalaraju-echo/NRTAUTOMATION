@@ -79,6 +79,9 @@ try:
 
     # 1. Login ONCE at the start of the script
     result = loginPageObj.inventory_gui_login(username, password)
+    print("Waiting for 10 seconds to allow cloud dashboard to fully render...")
+import time
+time.sleep(10)
     basepagenav.closeReleaseNote()
 
     # 2. Loop through every date requested
