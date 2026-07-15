@@ -48,9 +48,11 @@ class WebDriverFactory():
             # --- THIS IS THE CRUCIAL LINE WE CHANGED ---
             # We removed the webdriver-manager completely!
             driver = webdriver.Chrome(options=chrome_options)
-            # -------------------------------------------
             
-            driver.maximize_window()
+            # --- THE FIX ---
+            # Remove driver.maximize_window() and use this instead:
+            driver.set_window_size(1920, 1080)
+            
             driver.implicitly_wait(30)
            # --- NEW: Force a crash if the page hangs for more than 45 seconds ---
             driver.set_page_load_timeout(45) 
