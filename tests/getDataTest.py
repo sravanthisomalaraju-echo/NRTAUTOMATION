@@ -82,6 +82,10 @@ try:
     print("Waiting for 10 seconds to allow cloud dashboard to fully render...")
     time.sleep(10)
     basepagenav.closeReleaseNote()
+    print("Closing release note...")
+    time.sleep(2)
+
+
 
     # 2. Loop through every date requested
     for target_date in dates_to_run:
@@ -214,6 +218,13 @@ except Exception as e:
     print(f"An error occurred during execution: {e}")
 
 finally:
+    print("Taking a screenshot of the final browser state...")
+    try:
+        if driver:
+            driver.save_screenshot("cloud_error.png")
+    except Exception as e:
+        print("Could not take screenshot:", e)
+        
     print("Initiating browser teardown...")
     try:
         # Force-close the active tab first to instantly sever the web app's connection
