@@ -35,6 +35,12 @@ class WebDriverFactory():
                 chrome_options.add_argument("--no-sandbox")
                 chrome_options.add_argument("--disable-dev-shm-usage")
                 chrome_options.add_argument("--window-size=1920,1080")
+                chrome_options.add_argument("--disable-gpu")
+                
+                # --- NEW: The Disguise! ---
+                # This tricks the website into thinking we are on a normal Windows laptop
+                chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36")
+            
             else:
                 print("Local environment detected: Running Visible Browser")
             
@@ -46,7 +52,12 @@ class WebDriverFactory():
             
             driver.maximize_window()
             driver.implicitly_wait(30)
+           # --- NEW: Force a crash if the page hangs for more than 45 seconds ---
+            driver.set_page_load_timeout(45) 
+            
+            print(f"Navigating to {baseURL}...")
             driver.get(baseURL)
+            print("Successfully loaded the login page!")
 
         else:
             print('Please select chrome browser')
