@@ -216,15 +216,23 @@ try:
 
 except Exception as e:
     print(f"An error occurred during execution: {e}")
-
-finally:
-    print("Taking a screenshot of the final browser state...")
-    try:
-        if driver:
-            driver.save_screenshot("cloud_error.png")
-    except Exception as e:
-        print("Could not take screenshot:", e)
+   # Take the photo right as the crash happens!
+    if driver:
+        # 1. Ensure the screenshots folder exists (prevents crashes if it was accidentally deleted)
+        os.makedirs("screenshots", exist_ok=True)
         
+        # 2. Generate a timestamp (e.g., 2026-07-16_10-43-47)
+        timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        screenshot_path = f"screenshots/cloud_error_{timestamp}.png"
+        
+        # 3. Save the picture to the folder
+        driver.save_screenshot(screenshot_path)
+        print(f"Error screenshot saved to: {screenshot_path}")
+        
+    raise # Forcefully crash so GitHub knows it failed
+
+    
+finally:
     print("Initiating browser teardown...")
     try:
         # Force-close the active tab first to instantly sever the web app's connection

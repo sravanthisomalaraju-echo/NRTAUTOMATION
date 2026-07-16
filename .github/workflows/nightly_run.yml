@@ -4,7 +4,7 @@ name: Nightly NRT Automation
 on:
   schedule:
     # Runs at 1:00 AM Mountain Time (which is 8:00 AM UTC)
-    - cron: '0 8 * * *'
+    - cron: '24 7 * * *'
   # This allows you to click a button on GitHub to run it manually anytime
   workflow_dispatch: 
 
@@ -42,7 +42,25 @@ jobs:
 
       - name: Upload Error Screenshot
         uses: actions/upload-artifact@v4
-        if: always() # This forces GitHub to upload the image even if the Python script crashes!
+        if: failure() # Only uploads if the Python script crashes!
         with:
           name: headless-screenshot
-          path: cloud_error.png
+          path: screenshots/
+
+      - name: Get Current Date
+        if: always()
+        # Grabs the date in MM/DD/YYYY format and saves it to the environment
+        run: echo "DATE_TODAY=$(date +'%m/%d/%Y')" >> $GITHUB_ENV
+
+      - name: Send Success Email
+        if: success()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: NRT Automation - Success! [${{ env.DATE_TODAY }}]
+          body: The NRT extraction to Google Sheets completed successfully.
+          to: sravanthi.somalaraju@dish.com 
+          from: GitHub Actions NRT Bot
