@@ -462,3 +462,14 @@
 16/07/2026 10:58:28 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
 16/07/2026 10:58:58 AM - NavigationBasePageMenuMap - ERROR: Element not found with locator : //button[@id="BlockDashboard-close"]/iand locatortype : xpath
 16/07/2026 10:58:58 AM - NavigationBasePageMenuMap - ERROR: Element did not found on the page with locator : //button[@id="BlockDashboard-close"]/i
+16/07/2026 10:59:28 AM - NavigationBasePageMenuMap - ERROR: Element not found with locator : //button[@id="BlockDashboard-close"]/iand locatortype : xpath
+16/07/2026 10:59:28 AM - NavigationBasePageMenuMap - ERROR: Cannot click on the element with locator: //button[@id="BlockDashboard-close"]/i locatorType: xpath
+16/07/2026 10:59:28 AM - NavigationBasePageMenuMap - INFO: waiting for max :: 10:: second for the element
+16/07/2026 10:59:58 AM - NavigationBasePageMenuMap - INFO: Element did not appeard on the webpage ://button[@id="TnDashboard-close"]/i
+16/07/2026 10:59:58 AM - NavigationBasePageMenuMap - ERROR: Element is not displayed
+16/07/2026 11:00:28 AM - NavigationBasePageMenuMap - ERROR: Element not found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+16/07/2026 11:00:28 AM - NavigationBasePageMenuMap - ERROR: Element did not found on the page with locator : //button[@id="TnDashboard-close"]/i
+16/07/2026 11:00:58 AM - NavigationBasePageMenuMap - ERROR: Element not found with locator : //button[@id="TnDashboard-close"]/iand locatortype : xpath
+16/07/2026 11:00:58 AM - NavigationBasePageMenuMap - ERROR: Cannot click on the element with locator: //button[@id="TnDashboard-close"]/i locatorType: xpath
+16/07/2026 11:00:58 AM - Util - INFO: Wait :: '2' seconds for 
+16/07/2026 11:01:00 AM - Util - INFO: Wait :: '1' seconds for 
