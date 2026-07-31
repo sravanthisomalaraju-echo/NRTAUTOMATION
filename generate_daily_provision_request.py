@@ -6,11 +6,14 @@ from utilities.gchat_notifier import GChatNotifier
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 JSON_CREDENTIALS = os.path.join(BASE_DIR, "credentials.json")
 
-# Environment variable read (for GitHub Actions) with local fallback
-PROVISIONING_WEBHOOK_URL = os.environ.get(
-    "PROVISIONING_WEBHOOK_URL",
-    "https://chat.googleapis.com/v1/spaces/AAQAc2bhlGg/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=Ga-r-XrNzwAxm8GU_jlFfRzRdBChAqiMUntm_gd74-Q"
-)
+# Environment variable read (Set via GitHub Actions Secrets or Local .env)
+PROVISIONING_WEBHOOK_URL = os.environ.get("PROVISIONING_WEBHOOK_URL")
+
+if not PROVISIONING_WEBHOOK_URL:
+    print("❌ SECURITY ERROR: 'PROVISIONING_WEBHOOK_URL' environment variable is missing!")
+    print("   • In GitHub Actions: Pass it under 'env:' using ${{ secrets.PROVISIONING_WEBHOOK_URL }}")
+    print("   • For Local Runs: Set it in your local environment or .env file.")
+    sys.exit(1)
 
 WORKBOOK_NAME = "Number Range Testing_MasterSheet"
 TAB_NAME = "Priority Test numbers with effective dates"
