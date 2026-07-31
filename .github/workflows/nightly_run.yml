@@ -64,3 +64,8 @@ jobs:
           body: The NRT extraction to Google Sheets completed successfully.
           to: sravanthi.somalaraju@dish.com 
           from: GitHub Actions NRT Bot
+        
+      - name: Send Daily Provisioning & Cease Request to Google Chat
+        env:
+          PROVISIONING_WEBHOOK_URL: ${{ secrets.PROVISIONING_WEBHOOK_URL }}
+        run: python generate_daily_provision_request.py

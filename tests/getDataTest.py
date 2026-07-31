@@ -15,7 +15,10 @@ from configfiles.common_variable import *
 from pages.home.login_page import LoginPage
 from tabulate import tabulate
 from pathlib import Path
+from utilities.auto_queue_builder import AutoQueueBuilder
 
+# Define path to credentials JSON
+CREDENTIALS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "credentials.json")
 
 def valid_date(date_str):
     """Validate date in m/d/yyyy format."""
@@ -119,10 +122,9 @@ try:
         output_file = Path(f"dict_table_{date_safe_str}.html")
         output_file.write_text(html_content, encoding="utf-8")
         print(f"HTML table file generated: {output_file.resolve()}")
-
-        # 5. GOOGLE SHEETS CODE CAN GO HERE LATER
-        # (It will execute once for every date in the loop)
+       
         # 5. PUSH TO GOOGLE SHEETS
+        # (It will execute once for every date in the loop)
         print("Pushing extracted data to Google Sheets...")
         try:
             # 5a. Set up Authentication using your new Refresh Token
@@ -203,6 +205,12 @@ try:
                 print(f"✅ Successfully appended {len(rows_to_append)} NEW rows to Google Sheets for {target_date}!")
             else:
                 print(f"✅ All records for {target_date} are already up to date in Google Sheets. No new data appended.")
+            
+            # 6. RUN AUTO ICCID ASSIGNMENT & QUEUE BUILDER FOR THIS DATE
+            print(f"⚡ Triggering Auto Queue Builder for {target_date}...")
+            builder = AutoQueueBuilder(CREDENTIALS_PATH)
+            builder.process_and_assign_new_blocks(target_date)
+            print(f"✅ Auto Queue Builder completed for {target_date}.")
                 
         except Exception as e:
             print(f"❌ Failed to update Google Sheets: {e}")
