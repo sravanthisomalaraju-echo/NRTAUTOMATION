@@ -1,50 +1,324 @@
 import os
+import re
 import sys
-from utilities.gsheet_manager import GSheetManager
-from utilities.gchat_notifier import GChatNotifier
+import logging
+from dotenv import load_dotenv
+from gspread.cell import Cell
+
+# Load local .env variables
+load_dotenv()
+
+# Imports specifically structured for NRTAUTOMATION (GitHub Actions / Utilities)
+try:
+    from utilities.gsheet_manager import GSheetManager
+except ImportError:
+    from gsheet_manager import GSheetManager
+
+try:
+    from utilities.gchat_notifier import GChatNotifier
+except ImportError:
+    from gchat_notifier import GChatNotifier
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 JSON_CREDENTIALS = os.path.join(BASE_DIR, "credentials.json")
-
-# Environment variable read (Set via GitHub Actions Secrets or Local .env)
-PROVISIONING_WEBHOOK_URL = os.environ.get("PROVISIONING_WEBHOOK_URL")
-
-if not PROVISIONING_WEBHOOK_URL:
-    print("❌ SECURITY ERROR: 'PROVISIONING_WEBHOOK_URL' environment variable is missing!")
-    print("   • In GitHub Actions: Pass it under 'env:' using ${{ secrets.PROVISIONING_WEBHOOK_URL }}")
-    print("   • For Local Runs: Set it in your local environment or .env file.")
-    sys.exit(1)
-
 WORKBOOK_NAME = "Number Range Testing_MasterSheet"
-TAB_NAME = "Priority Test numbers with effective dates"
 
-def main():
-    print("🚀 Starting Daily Provisioning Request Generator...")
-    
-    # 1. Initialize Sheet Reader
-    gsheet = GSheetManager(JSON_CREDENTIALS, sheet_name=WORKBOOK_NAME)
-    
-    # 2. Extract Active Row Data
-    start_row, end_row, cease_list, provision_list = gsheet.get_priority_test_numbers(TAB_NAME)
-    
-    if not start_row:
-        print("😴 No pending effective rows found to process. Exiting.")
-        return
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
-    print(f"📊 Found active rows from Row {start_row} to Row {end_row}.")
-    print(f"   • Cease Items: {len(cease_list)}")
-    print(f"   • Provision Items: {len(provision_list)}")
+def is_blocked_or_tested(val_str):
+    """Helper to check if a text string indicates a tested/blocked entry."""
+    if not val_str:
+        return False
+    return "block is already tested" in str(val_str).lower()
 
-    # 3. Post to Google Chat
-    notifier = GChatNotifier(PROVISIONING_WEBHOOK_URL)
-    notifier.send_batch_provision_cease_request(
-        cease_items=cease_list,
-        provision_items=provision_list,
+def archive_completed_queue_rows(wb, q_sheet, q_prov_idx):
+    """Appends CEASED rows to 'Test_Queue_Archive' and deletes them from 'Test_Queue_Master'."""
+    logger.info("🧹 Checking Test_Queue_Master for completed/ceased rows to archive...")
+    
+    # 1. Get or create the Test_Queue_Archive worksheet
+    try:
+        archive_sheet = wb.worksheet("Test_Queue_Archive")
+    except Exception:
+        logger.info("➕ Creating 'Test_Queue_Archive' tab in workbook...")
+        archive_sheet = wb.add_worksheet(title="Test_Queue_Archive", rows=1000, cols=20)
+        # Copy headers from active queue sheet
+        header_row = q_sheet.row_values(1)
+        if header_row:
+            archive_sheet.append_row(header_row)
+
+    # 2. Fetch fresh rows after cell updates
+    q_rows = q_sheet.get_all_values()
+    rows_to_archive = []
+    indices_to_delete = []
+
+    for idx, row in enumerate(q_rows[1:], start=2):
+        if len(row) > q_prov_idx:
+            prov_status = row[q_prov_idx].strip().upper()
+            if prov_status == "CEASED":
+                rows_to_archive.append(row)
+                indices_to_delete.append(idx)
+
+    # 3. Append to Archive and Delete from Active Queue (in REVERSE order)
+    if rows_to_archive:
+        logger.info(f"📦 Moving {len(rows_to_archive)} CEASED row(s) to 'Test_Queue_Archive'...")
+        archive_sheet.append_rows(rows_to_archive)
+
+        logger.info("🗑️ Purging archived rows from 'Test_Queue_Master'...")
+        for r_idx in sorted(indices_to_delete, reverse=True):
+            q_sheet.delete_rows(r_idx)
+        logger.info("✅ Queue cleanup complete!")
+    else:
+        logger.info("ℹ️ No CEASED rows ready for archiving in this run.")
+
+
+def generate_and_post_daily_requests():
+    logger.info("🚀 Starting Targeted Daily Provisioning & Cease Request Generator...")
+
+    cred_file = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", JSON_CREDENTIALS)
+    gsheet = GSheetManager(cred_file, sheet_name=WORKBOOK_NAME)
+    wb = gsheet.gc.open(WORKBOOK_NAME)
+
+    notifier = GChatNotifier()
+
+    p_sheet = wb.worksheet("Priority Test numbers with effective dates")
+    sim_sheet = wb.worksheet("SIM_Cards_Inventory")
+    q_sheet = wb.worksheet("Test_Queue_Master")
+
+    # -------------------------------------------------------------------------
+    # STEP 1: PARSE PRIORITY TAB & MAP LATEST OCCURRENCE PER ICCID / TN
+    # -------------------------------------------------------------------------
+    logger.info("🔍 Mapping latest occurrences per ICCID & TN from Priority tab...")
+    p_rows = p_sheet.get_all_values()
+    p_headers = [h.strip().lower() for h in p_rows[0]]
+
+    p_phone_idx = next((i for i, h in enumerate(p_headers) if "arnold" in h or "phone" in h or "number" in h), 2)
+    p_iccid_idx = next((i for i, h in enumerate(p_headers) if "iccid" in h), 3)
+    p_prov_idx = next((i for i, h in enumerate(p_headers) if "provisioning status" in h), 6)
+    p_cease_idx = next((i for i, h in enumerate(p_headers) if "cease status" in h), 7)
+
+    latest_p_by_iccid = {}
+    latest_p_by_tn = {}
+
+    for idx, row in enumerate(p_rows[1:], start=2):
+        if len(row) > max(p_prov_idx, p_cease_idx, p_phone_idx):
+            raw_phone = row[p_phone_idx].strip()
+            clean_phone = re.sub(r'[^\d]', '', raw_phone)[-10:]
+            iccid = row[p_iccid_idx].strip() if len(row) > p_iccid_idx else ""
+            
+            prov_val = row[p_prov_idx].strip().upper()
+            cease_val = row[p_cease_idx].strip().upper()
+
+            if is_blocked_or_tested(iccid) or is_blocked_or_tested(raw_phone):
+                continue
+
+            row_info = {
+                'row_idx': idx,
+                'raw_phone': raw_phone,
+                'clean_phone': clean_phone,
+                'iccid': iccid,
+                'prov_status': prov_val,
+                'cease_status': cease_val
+            }
+
+            if clean_phone:
+                latest_p_by_tn[clean_phone] = row_info
+            if iccid.startswith("89"):
+                latest_p_by_iccid[iccid] = row_info
+
+    # -------------------------------------------------------------------------
+    # STEP 2: SYNC SIM INVENTORY BASED ON LATEST PRIORITY STATE
+    # -------------------------------------------------------------------------
+    sim_rows = sim_sheet.get_all_values()
+    sim_headers = [h.strip().lower() for h in sim_rows[0]]
+
+    sim_iccid_idx = next((i for i, h in enumerate(sim_headers) if "iccid" in h), 0)
+    sim_state_idx = next((i for i, h in enumerate(sim_headers) if "state" in h), 2)
+    sim_tn_idx = next((i for i, h in enumerate(sim_headers) if "tn" in h or "phone" in h), 3)
+    sim_env_idx = next((i for i, h in enumerate(sim_headers) if "env" in h), 4)
+
+    sim_sync_cells = []
+    assigned_sim_tn_map = {}
+    iccid_to_sim_row_map = {}
+    cease_sim_items = []
+
+    for row_idx, row in enumerate(sim_rows[1:], start=2):
+        if len(row) > max(sim_iccid_idx, sim_tn_idx, sim_state_idx):
+            iccid = row[sim_iccid_idx].strip()
+            raw_tn = row[sim_tn_idx].strip()
+            state = row[sim_state_idx].strip().upper()
+            clean_tn = re.sub(r'[^\d]', '', raw_tn)[-10:]
+
+            if is_blocked_or_tested(iccid) or is_blocked_or_tested(raw_tn):
+                continue
+
+            if iccid and iccid.startswith("89"):
+                iccid_to_sim_row_map[iccid] = row_idx
+                latest_p = latest_p_by_iccid.get(iccid) or latest_p_by_tn.get(clean_tn)
+
+                if latest_p:
+                    p_cease_done = latest_p['cease_status'] in ["DONE", "CEASED", "COMPLETED"]
+
+                    if p_cease_done and state != "AVAILABLE":
+                        sim_sync_cells.append(Cell(row=row_idx, col=sim_state_idx + 1, value="AVAILABLE"))
+                        sim_sync_cells.append(Cell(row=row_idx, col=sim_tn_idx + 1, value=""))
+                        if len(row) > sim_env_idx:
+                            sim_sync_cells.append(Cell(row=row_idx, col=sim_env_idx + 1, value=""))
+                        logger.info(f"🔄 Resetting SIM to AVAILABLE (Priority Cease Done): ICCID {iccid}")
+                        continue
+
+                if state in ["ASSIGNED", "WAITING_PROVISIONING"]:
+                    if clean_tn:
+                        assigned_sim_tn_map[clean_tn] = iccid
+                elif state in ["CEASE_PENDING", "CEASE_NEEDED"]:
+                    cease_sim_items.append((raw_tn, iccid))
+
+    if sim_sync_cells:
+        sim_sheet.update_cells(sim_sync_cells)
+
+    # -------------------------------------------------------------------------
+    # STEP 3: READ QUEUE MASTER FOR PASSED CEASE TRIGGERS & SYNC CEASED STATUS
+    # -------------------------------------------------------------------------
+    q_rows = q_sheet.get_all_values()
+    q_headers = [h.strip().lower() for h in q_rows[0]]
+
+    q_phone_idx = next((i for i, h in enumerate(q_headers) if "phone" in h), 2)
+    q_iccid_idx = next((i for i, h in enumerate(q_headers) if "iccid" in h), 3)
+    q_prov_idx = next((i for i, h in enumerate(q_headers) if "provisioning_status" in h), 5)
+    q_exec_idx = next((i for i, h in enumerate(q_headers) if "test_execution_status" in h), 6)
+    q_snow_cease_idx = next((i for i, h in enumerate(q_headers) if "snow_cease_req" in h), 10)
+
+    queue_waiting_tns = set()
+    cease_items = list(cease_sim_items)
+    q_cease_row_map = {}
+    q_sync_cells = []
+
+    for row_idx, row in enumerate(q_rows[1:], start=2):
+        if len(row) > max(q_phone_idx, q_iccid_idx):
+            raw_phone = row[q_phone_idx].strip()
+            iccid = row[q_iccid_idx].strip()
+            clean_phone = re.sub(r'[^\d]', '', raw_phone)[-10:]
+
+            prov_status = row[q_prov_idx].strip().upper() if len(row) > q_prov_idx else ""
+            exec_status = row[q_exec_idx].strip().upper() if len(row) > q_exec_idx else ""
+            snow_cease = row[q_snow_cease_idx].strip() if len(row) > q_snow_cease_idx else ""
+
+            if is_blocked_or_tested(iccid) or exec_status in ["SKIPPED_ALREADY_TESTED", "SKIPPED"]:
+                continue
+
+            latest_p = latest_p_by_iccid.get(iccid) or latest_p_by_tn.get(clean_phone)
+            p_cease_done = latest_p['cease_status'] in ["DONE", "CEASED", "COMPLETED"] if latest_p else False
+
+            # Flipped to CEASED in Test Queue Master when Priority Tab Cease is marked Done
+            if p_cease_done and prov_status != "CEASED":
+                q_sync_cells.append(Cell(row=row_idx, col=q_prov_idx + 1, value="CEASED"))
+                logger.info(f"🔄 Syncing Test Queue Master to CEASED: ICCID {iccid}")
+
+            if clean_phone and prov_status not in ["PROVISIONING_COMPLETED", "PROVISION_COMPLETED", "DONE", "CEASED"]:
+                if exec_status not in ["PASSED", "FAILED"]:
+                    queue_waiting_tns.add(clean_phone)
+                    if iccid and iccid.startswith("89"):
+                        assigned_sim_tn_map[clean_phone] = iccid
+
+            if exec_status == "PASSED" and exec_status != "FAILED" and not p_cease_done:
+                if prov_status not in ["CEASED", "CEASE_REQUESTED"] and snow_cease not in ["CEASED_DONE", "DONE"]:
+                    if iccid and iccid.startswith("89"):
+                        if (raw_phone, iccid) not in cease_items:
+                            cease_items.append((raw_phone, iccid))
+                        q_cease_row_map[iccid] = row_idx
+
+    if q_sync_cells:
+        q_sheet.update_cells(q_sync_cells)
+
+    # -------------------------------------------------------------------------
+    # STEP 4: FILTER PROVISION ITEMS & MAP ALL ROW INDICES
+    # -------------------------------------------------------------------------
+    provision_items = []
+    provision_rows_indices = []
+    cease_rows_indices = []
+
+    for clean_tn, info in latest_p_by_tn.items():
+        prov_status = info['prov_status']
+        cease_status = info['cease_status']
+        raw_phone = info['raw_phone']
+        iccid = info['iccid'] or assigned_sim_tn_map.get(clean_tn)
+
+        if cease_status in ["DONE", "CEASED", "COMPLETED"]:
+            continue
+
+        if clean_tn in queue_waiting_tns or clean_tn in assigned_sim_tn_map:
+            if prov_status not in ["DONE", "PROVISIONING_COMPLETED", "PROVISION_REQUESTED"]:
+                if iccid and iccid.startswith("89"):
+                    provision_items.append((raw_phone, iccid))
+                    provision_rows_indices.append(info['row_idx'])
+
+    for raw_phone, iccid in cease_items:
+        clean_phone = re.sub(r'[^\d]', '', raw_phone)[-10:]
+        latest_p = latest_p_by_iccid.get(iccid) or latest_p_by_tn.get(clean_phone)
+        if latest_p:
+            cease_rows_indices.append(latest_p['row_idx'])
+
+    # -------------------------------------------------------------------------
+    # STEP 5: DISPATCH GCHAT NOTIFICATION & UPDATE SHEET STATUSES
+    # -------------------------------------------------------------------------
+    all_row_indices = list(set(provision_rows_indices + cease_rows_indices))
+
+    if not provision_items and not cease_items:
+        logger.info("ℹ️ No active pending provisioning or cease items found. Running archive check before exit...")
+        archive_completed_queue_rows(wb, q_sheet, q_prov_idx)
+        sys.exit(0)
+
+    start_row = min(all_row_indices) if all_row_indices else 2
+    end_row = max(all_row_indices) if all_row_indices else start_row
+
+    logger.info(f"🎯 Filtered Request Summary: {len(provision_items)} Provision item(s) and {len(cease_items)} PASSED Cease item(s) (Priority Rows {start_row}-{end_row}).")
+
+    posted = notifier.send_batch_provision_cease_request(
+        cease_items=cease_items,
+        provision_items=provision_items,
         start_row=start_row,
         end_row=end_row,
-        tab_name=TAB_NAME,
+        tab_name="Priority Test numbers with effective dates",
         workbook_name=WORKBOOK_NAME
     )
 
+    if posted:
+        logger.info("✅ GChat request posted! Updating Google Sheet statuses...")
+
+        if provision_rows_indices:
+            prov_cells = [
+                Cell(row=r_idx, col=p_prov_idx + 1, value="PROVISION_REQUESTED")
+                for r_idx in provision_rows_indices
+            ]
+            p_sheet.update_cells(prov_cells)
+
+        if cease_items:
+            sim_cells = []
+            for tn, iccid in cease_items:
+                sim_row_idx = iccid_to_sim_row_map.get(iccid)
+                if sim_row_idx:
+                    sim_cells.append(Cell(row=sim_row_idx, col=sim_state_idx + 1, value="CEASE_REQUESTED"))
+            if sim_cells:
+                sim_sheet.update_cells(sim_cells)
+
+            q_cease_cells = []
+            for tn, iccid in cease_items:
+                q_row_idx = q_cease_row_map.get(iccid)
+                if q_row_idx:
+                    q_cease_cells.append(Cell(row=q_row_idx, col=q_prov_idx + 1, value="CEASE_REQUESTED"))
+            if q_cease_cells:
+                q_sheet.update_cells(q_cease_cells)
+
+        # -------------------------------------------------------------------------
+        # STEP 6: ARCHIVE & PURGE COMPLETED ROWS FROM TEST QUEUE MASTER
+        # -------------------------------------------------------------------------
+        archive_completed_queue_rows(wb, q_sheet, q_prov_idx)
+
+        logger.info("🎉 Execution completed successfully!")
+        sys.exit(0)
+    else:
+        logger.error("❌ Failed to post message to GChat webhook.")
+        sys.exit(1)
+
 if __name__ == "__main__":
-    main()
+    generate_and_post_daily_requests()

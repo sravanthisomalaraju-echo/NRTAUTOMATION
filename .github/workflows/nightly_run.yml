@@ -68,4 +68,5 @@ jobs:
       - name: Send Daily Provisioning & Cease Request to Google Chat
         env:
           PROVISIONING_WEBHOOK_URL: ${{ secrets.PROVISIONING_WEBHOOK_URL }}
+          SPREADSHEET_URL: ${{ secrets.SPREADSHEET_URL }}
         run: python generate_daily_provision_request.py

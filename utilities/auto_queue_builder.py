@@ -97,18 +97,18 @@ class AutoQueueBuilder:
                 self.sim_ws.update_cell(sim_row_idx, 3, "ASSIGNED")
                 self.sim_ws.update_cell(sim_row_idx, 4, tn)
 
-                # 3. Append to Test_Queue_Master as QUEUED
+                # Append to Test_Queue_Master with All 3 PCIs and WAITING_PROVISIONING status
                 now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
                 self.queue_ws.append_row([
-                    row[0],                # Col A: Date
-                    block,                 # Col B: Block
-                    tn,                    # Col C: Phone_Number
-                    assigned_iccid,        # Col D: Assigned_ICCID
-                    "80",                  # Col E: Target_Env (default)
-                    "",                    # Col F: Provisioning_Status
-                    "QUEUED",              # Col G: Test_Execution_Status
+                    row[0],                  # Col A: Date
+                    block,                   # Col B: Block
+                    tn,                      # Col C: Phone_Number
+                    assigned_iccid,          # Col D: Assigned_ICCID
+                    "80/81, 84, 86",         # Col E: Target_Env (Covers all 3 PCIs)
+                    "",                      # Col F: Provisioning_Status
+                    "WAITING_PROVISIONING",  # Col G: Test_Execution_Status
                     "", "", "", "", "", "", "", # Col H-N empty
-                    now_str                # Col O: Last_Sync_Timestamp
+                    now_str                  # Col O: Last_Sync_Timestamp
                 ])
 
                 assigned_count += 1

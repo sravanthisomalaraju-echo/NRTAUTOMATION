@@ -3,6 +3,10 @@ import logging
 from base.basepage import BasePage
 import time
 from pathlib import Path
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 class NavigationBasePageMenuMap(BasePage):
 
@@ -13,11 +17,15 @@ class NavigationBasePageMenuMap(BasePage):
         self.driver = driver
 
     # Locators
+    # Nov 2026 portal change: Inventory (click dropdown) -> NANP (hover submenu) -> Block / TN Dashboard
     _inventory_menu = '//a[@id="inventory"]'
-    _blockDashboard = '//a[contains(text(),"Block Dashboard")]' # first element index0
+    # <a class="dropdown-item submenu"><span class="triangle-right">◂</span>NANP<span class="triangle-left">‣</span></a>
+    _nanp_submenu = "//a[contains(@class,'dropdown-item') and contains(@class,'submenu')][contains(normalize-space(.),'NANP')]"
+    _nanp_submenu_fallback = "//span[contains(@class,'triangle-right')]/parent::a[contains(normalize-space(.),'NANP')]"
+    _blockDashboard = '//a[@id="main-nav-dashboard-block"]'
     _blockDashboardMaximize = '//button[@id="BlockDashboard-maximize"]'
     _blockDashboardClose = '//button[@id="BlockDashboard-close"]/i'
-    _tnDashnoard = '//a[contains(text(),"TN Dashboard")]'
+    _tnDashnoard = '//a[@id="main-nav-dashboard-tn"]'
     _tnDashboardClose = '//button[@id="TnDashboard-close"]/i'
     _LogOutIcon = '//a/i[@title="Sign out"]'
     _close_release_note = '//button[@id="modal-cancel-btn"]'
@@ -45,8 +53,47 @@ class NavigationBasePageMenuMap(BasePage):
     _reqester_drop_down = "//td[contains(text(),'Requester')]/following-sibling::td/select"
     
     def navigateToInventoryMenu(self):
-        self.elementClick(locator=self._inventory_menu, locatorType="xpath")
-     
+        """Opens the Inventory dropdown (Bootstrap click toggle)."""
+        wait = WebDriverWait(self.driver, 20)
+        inv = wait.until(EC.element_to_be_clickable((By.XPATH, self._inventory_menu)))
+        if inv.get_attribute("aria-expanded") != "true":
+            inv.click()
+        time.sleep(1)
+
+    def hoverOnNanpMenu(self):
+        """Hovers over the NANP submenu so Block/TN Dashboard links become visible."""
+        wait = WebDriverWait(self.driver, 10)
+        nanp = None
+        for xp in (self._nanp_submenu, self._nanp_submenu_fallback):
+            try:
+                nanp = wait.until(EC.visibility_of_element_located((By.XPATH, xp)))
+                break
+            except Exception:
+                continue
+        if nanp is None:
+            self.log.warning("NANP submenu not found - will try direct click on dashboard link")
+            return False
+        ActionChains(self.driver).move_to_element(nanp).pause(1).perform()
+        return True
+
+    def _openDashboardViaNanp(self, link_xpath, name):
+        """Inventory -> hover NANP -> click dashboard link.
+        Falls back to a JavaScript click if the hover menu doesn't open
+        (common in headless Chrome on GitHub Actions)."""
+        self.navigateToInventoryMenu()
+        self.hoverOnNanpMenu()
+        try:
+            link = WebDriverWait(self.driver, 8).until(
+                EC.visibility_of_element_located((By.XPATH, link_xpath)))
+            ActionChains(self.driver).move_to_element(link).pause(0.5).click(link).perform()
+            self.log.info(f"Opened {name} via Inventory > NANP menu")
+        except Exception:
+            self.log.warning(f"{name} link not visible after hover - using JavaScript click")
+            link = WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, link_xpath)))
+            self.driver.execute_script("arguments[0].click();", link)
+        time.sleep(2)
+
     def clickOnSearchButton(self):
         #self.webScroll("down")
         #self.webScrollIntoViewAndClickElement(self._search_button, "xpath")
@@ -58,22 +105,36 @@ class NavigationBasePageMenuMap(BasePage):
             self.elementClick(locator=self._effective_field_coloum, locatorType="xpath")
         
     def navigateToblockDashboardMenu(self):
-        self.navigateToInventoryMenu()
-        time.sleep(5)
-        self.elementClick(locator=self._blockDashboard, locatorType="xpath")
+        self._openDashboardViaNanp(self._blockDashboard, "Block Dashboard")
 
     def navigateToTnDashboardMenu(self):
-        self.navigateToInventoryMenu()
-        self.elementClick(locator=self._tnDashnoard, locatorType="xpath")
+        self._openDashboardViaNanp(self._tnDashnoard, "TN Dashboard")
 
     def maximizeblockDashboardMenu(self):
         self.elementClick(locator=self._blockDashboardMaximize, locatorType="xpath")
         
+    def _closeIfOpen(self, close_xpath, name):
+        """Clicks a dashboard close button only if it is on screen.
+        Temporarily disables the driver's 30s implicit wait so an
+        already-closed dashboard is skipped instantly instead of
+        waiting ~90s per close attempt."""
+        self.driver.implicitly_wait(0)
+        try:
+            buttons = [b for b in self.driver.find_elements(By.XPATH, close_xpath) if b.is_displayed()]
+            if not buttons:
+                self.log.info(f"{name} already closed - skipping close")
+                return False
+            buttons[0].click()
+            self.log.info(f"Closed {name}")
+            return True
+        finally:
+            self.driver.implicitly_wait(30)
+
     def closeblockDashboardMenu(self):
-        self.elementClick(locator=self._blockDashboardClose, locatorType="xpath")
+        return self._closeIfOpen(self._blockDashboardClose, "Block Dashboard")
       
     def closeTnDashboardMenu(self):
-        self.elementClick(locator=self._tnDashboardClose, locatorType="xpath")
+        return self._closeIfOpen(self._tnDashboardClose, "TN Dashboard")
           
 
     def clickOnLogoutLink(self):

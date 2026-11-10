@@ -211,6 +211,8 @@ try:
             builder = AutoQueueBuilder(CREDENTIALS_PATH)
             builder.process_and_assign_new_blocks(target_date)
             print(f"✅ Auto Queue Builder completed for {target_date}.")
+
+            
                 
         except Exception as e:
             print(f"❌ Failed to update Google Sheets: {e}")
