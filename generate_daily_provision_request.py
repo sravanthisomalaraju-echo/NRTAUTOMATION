@@ -2,6 +2,7 @@ import os
 import re
 import sys
 import logging
+from datetime import datetime
 from dotenv import load_dotenv
 from gspread.cell import Cell
 
@@ -70,6 +71,145 @@ def archive_completed_queue_rows(wb, q_sheet, q_prov_idx):
         logger.info("✅ Queue cleanup complete!")
     else:
         logger.info("ℹ️ No CEASED rows ready for archiving in this run.")
+
+
+# =============================================================================
+# RESULTS SYNC: Priority tab test results -> Test_Queue_Master
+# Testing is now manual, so nothing else writes PASSED/FAILED to the queue.
+# This step reads the carrier result columns on the Priority tab and updates
+# Test_Execution_Status so passed numbers are picked up for the cease request.
+# =============================================================================
+PASS_MARKS = {"X", "P", "PASS", "PASSED", "OK", "\u2713", "\u2714"}
+FAIL_MARKS = {"F", "FAIL", "FAILED"}
+IGNORE_MARKS = {"", "NO W2", "N/A", "NA", "-", "SKIP", "SKIPPED"}
+# Result columns whose header starts with one of these are optional (W2 is decommissioned).
+OPTIONAL_REGION_PREFIXES = ("w2",)
+RESULT_HEADER_RE = re.compile(r"(dish\s*dish|att mvno|tmo mvno|verizon mvno)", re.I)
+INC_RE = re.compile(r"\bINC[A-Z]*\d{5,}\b", re.I)
+# Queue statuses this step is allowed to change. Ceased / cease-requested rows are never touched.
+SYNCABLE_EXEC = {"", "WAITING_PROVISIONING", "PROVISIONING_REQUESTED", "PROVISION_REQUESTED",
+                 "PENDING", "QUEUED", "IN_PROGRESS", "IN_TESTING", "PASSED", "FAILED"}
+
+
+def _find_header_row(rows, must_contain="iccid", max_scan=10):
+    """The Priority tab's real header is on row 3 (rows 1-2 are box notes)."""
+    for i, row in enumerate(rows[:max_scan]):
+        if any(must_contain in str(c).strip().lower() for c in row):
+            return i
+    return None
+
+
+def evaluate_priority_results(row, result_cols):
+    """Returns (verdict, detail). verdict is PASSED, FAILED, or None while results are incomplete."""
+    failed, missing = [], []
+    for idx, header in result_cols:
+        val = row[idx].strip().upper() if idx < len(row) else ""
+        optional = header.lower().startswith(OPTIONAL_REGION_PREFIXES)
+        if val in FAIL_MARKS:
+            failed.append(header)
+        elif val in PASS_MARKS:
+            continue
+        elif not optional:
+            # Blank or unrecognised mark on a required column: not finished yet.
+            # Never treat a guess as a pass, because a pass leads to a cease request.
+            missing.append(header)
+    if failed:
+        return "FAILED", failed
+    if missing:
+        return None, missing
+    return "PASSED", []
+
+
+def sync_test_results_from_priority(p_rows, q_sheet, preview=False):
+    hdr_i = _find_header_row(p_rows)
+    if hdr_i is None:
+        logger.warning("Results sync skipped: no header row containing 'ICCID' on the Priority tab.")
+        return 0
+    headers = [h.strip() for h in p_rows[hdr_i]]
+    low = [h.lower() for h in headers]
+
+    def col(*keys):
+        return next((i for i, h in enumerate(low) if any(k in h for k in keys)), None)
+
+    tn_i, iccid_i, remarks_i = col("arnold", "internal test", "phone"), col("iccid"), col("remarks")
+    result_cols = [(i, h) for i, h in enumerate(headers) if RESULT_HEADER_RE.search(h)]
+    if tn_i is None or iccid_i is None or not result_cols:
+        logger.warning(f"Results sync skipped: required Priority columns not found in {headers}")
+        return 0
+
+    # Latest Priority result per phone number (later rows win, like the rest of this script)
+    results_by_tn = {}
+    for row_num, row in enumerate(p_rows[hdr_i + 1:], start=hdr_i + 2):
+        iccid = row[iccid_i].strip() if iccid_i < len(row) else ""
+        if not iccid.startswith("89"):
+            continue  # skips 'Block is already tested' rows and blanks
+        tn = re.sub(r"[^\d]", "", row[tn_i] if tn_i < len(row) else "")[-10:]
+        if not tn:
+            continue
+        verdict, detail = evaluate_priority_results(row, result_cols)
+        remarks = row[remarks_i].strip() if remarks_i is not None and remarks_i < len(row) else ""
+        inc = INC_RE.search(remarks)
+        results_by_tn[tn] = {"row": row_num, "iccid": iccid, "verdict": verdict,
+                             "detail": detail, "incident": inc.group(0) if inc else ""}
+
+    q_rows = q_sheet.get_all_values()
+    if not q_rows:
+        return 0
+    qh = [h.strip().lower() for h in q_rows[0]]
+
+    def qcol(name):
+        return next((i for i, h in enumerate(qh) if h == name), None)
+
+    q_tn, q_iccid = qcol("phone_number"), qcol("assigned_iccid")
+    q_prov, q_exec = qcol("provisioning_status"), qcol("test_execution_status")
+    q_inc, q_reason, q_ts = qcol("snow_incident_inc"), qcol("failure_reason"), qcol("last_sync_timestamp")
+    if None in (q_tn, q_iccid, q_prov, q_exec):
+        logger.warning(f"Results sync skipped: required Test_Queue_Master columns not found in {q_rows[0]}")
+        return 0
+
+    now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    cells, changes = [], []
+    for r_idx, row in enumerate(q_rows[1:], start=2):
+        def get(i):
+            return row[i].strip() if i is not None and i < len(row) else ""
+
+        tn = re.sub(r"[^\d]", "", get(q_tn))[-10:]
+        res = results_by_tn.get(tn)
+        if not res or not res["verdict"]:
+            continue  # not in Priority, or results not complete yet
+        if get(q_iccid) and get(q_iccid) != res["iccid"]:
+            logger.warning(f"Row {r_idx} ({get(q_tn)}): queue ICCID {get(q_iccid)} differs from "
+                           f"Priority row {res['row']} ICCID {res['iccid']} - not synced, check by hand")
+            continue
+        prov, exec_s = get(q_prov).upper(), get(q_exec).upper()
+        if prov in ("CEASED", "CEASE_REQUESTED") or exec_s not in SYNCABLE_EXEC:
+            continue
+
+        new_inc = res["incident"] if res["verdict"] == "FAILED" and q_inc is not None and not get(q_inc) else ""
+        if exec_s == res["verdict"] and not new_inc:
+            continue
+        if exec_s != res["verdict"]:
+            cells.append(Cell(row=r_idx, col=q_exec + 1, value=res["verdict"]))
+        if res["verdict"] == "FAILED":
+            if new_inc:
+                cells.append(Cell(row=r_idx, col=q_inc + 1, value=new_inc))
+            if q_reason is not None and not get(q_reason):
+                cells.append(Cell(row=r_idx, col=q_reason + 1, value="Failed: " + ", ".join(res["detail"])))
+        if q_ts is not None:
+            cells.append(Cell(row=r_idx, col=q_ts + 1, value=now_str))
+        note = ""
+        if res["verdict"] == "FAILED":
+            note = f" ({', '.join(res['detail'])}; incident {res['incident'] or 'not recorded'})"
+        changes.append(f"Row {r_idx} {get(q_tn)}: {exec_s or '(blank)'} -> {res['verdict']}{note}")
+
+    for c in changes:
+        logger.info(("[PREVIEW] " if preview else "Results sync: ") + c)
+    if not changes:
+        logger.info("Results sync: Test_Queue_Master already matches the Priority tab.")
+    elif not preview:
+        q_sheet.update_cells(cells)  # one API call
+        logger.info(f"Results sync: updated {len(changes)} Test_Queue_Master row(s) from the Priority tab.")
+    return len(changes)
 
 
 def generate_and_post_daily_requests():
@@ -175,6 +315,10 @@ def generate_and_post_daily_requests():
 
     if sim_sync_cells:
         sim_sheet.update_cells(sim_sync_cells)
+
+    # STEP 2b: copy Priority tab pass/fail results into Test_Queue_Master
+    # so passed numbers are picked up for the cease request below.
+    sync_test_results_from_priority(p_rows, q_sheet)
 
     # -------------------------------------------------------------------------
     # STEP 3: READ QUEUE MASTER FOR PASSED CEASE TRIGGERS & SYNC CEASED STATUS
