@@ -212,8 +212,26 @@ def sync_test_results_from_priority(p_rows, q_sheet, preview=False):
     return len(changes)
 
 
+# SIM states held outside NRT (e.g. lent for other testing). These SIMs are never
+# reset to AVAILABLE, assigned, provisioned or ceased by this script.
+RESERVED_SIM_STATES = {"RESERVED", "ON_HOLD", "HOLD", "DO_NOT_USE"}
+
+
 def generate_and_post_daily_requests():
     logger.info("🚀 Starting Targeted Daily Provisioning & Cease Request Generator...")
+
+    # STEP 0: pull PSIM cease confirmations from Google Chat -> Priority Column H = Done.
+    # Non-fatal: if Chat is unreachable, the run continues with whatever Column H already says.
+    if os.getenv("SKIP_GCHAT_CEASE_SYNC", "").lower() not in ("1", "true", "yes"):
+        try:
+            try:
+                from sync_cease_from_gchat import run_cease_sync
+            except ImportError:
+                from utilities.sync_cease_from_gchat import run_cease_sync
+            marked = run_cease_sync(days=int(os.getenv("GCHAT_CEASE_LOOKBACK_DAYS", "5")))
+            logger.info(f"Step 0: Chat cease sync marked {marked} Priority row(s) Done.")
+        except Exception as e:
+            logger.warning(f"⚠️ Step 0: Chat cease sync skipped ({e}). Continuing with current Column H values.")
 
     cred_file = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS", JSON_CREDENTIALS)
     gsheet = GSheetManager(cred_file, sheet_name=WORKBOOK_NAME)
@@ -230,17 +248,30 @@ def generate_and_post_daily_requests():
     # -------------------------------------------------------------------------
     logger.info("🔍 Mapping latest occurrences per ICCID & TN from Priority tab...")
     p_rows = p_sheet.get_all_values()
-    p_headers = [h.strip().lower() for h in p_rows[0]]
+    # Real header is on row 3 (rows 1-2 are box notes) - detect it instead of assuming row 1.
+    p_hdr_i = _find_header_row(p_rows)
+    if p_hdr_i is None:
+        logger.error("❌ No header row containing 'ICCID' found in the first 10 rows of the Priority tab. Aborting.")
+        sys.exit(1)
+    p_headers = [h.strip().lower() for h in p_rows[p_hdr_i]]
 
-    p_phone_idx = next((i for i, h in enumerate(p_headers) if "arnold" in h or "phone" in h or "number" in h), 2)
-    p_iccid_idx = next((i for i, h in enumerate(p_headers) if "iccid" in h), 3)
-    p_prov_idx = next((i for i, h in enumerate(p_headers) if "provisioning status" in h), 6)
-    p_cease_idx = next((i for i, h in enumerate(p_headers) if "cease status" in h), 7)
+    def _p_col(*keys):
+        return next((i for i, h in enumerate(p_headers) if any(k in h for k in keys)), None)
+
+    p_phone_idx = _p_col("arnold", "internal test", "phone")
+    p_iccid_idx = _p_col("iccid")
+    p_prov_idx = _p_col("provisioning status")
+    p_cease_idx = _p_col("cease status")
+    if None in (p_phone_idx, p_iccid_idx, p_prov_idx, p_cease_idx):
+        logger.error(f"❌ Required Priority columns not found in header row {p_hdr_i + 1}: {p_rows[p_hdr_i]}. Aborting.")
+        sys.exit(1)
+    logger.info(f"Priority header on row {p_hdr_i + 1}: phone={p_phone_idx}, iccid={p_iccid_idx}, "
+                f"prov={p_prov_idx}, cease={p_cease_idx}")
 
     latest_p_by_iccid = {}
     latest_p_by_tn = {}
 
-    for idx, row in enumerate(p_rows[1:], start=2):
+    for idx, row in enumerate(p_rows[p_hdr_i + 1:], start=p_hdr_i + 2):
         if len(row) > max(p_prov_idx, p_cease_idx, p_phone_idx):
             raw_phone = row[p_phone_idx].strip()
             clean_phone = re.sub(r'[^\d]', '', raw_phone)[-10:]
@@ -281,6 +312,7 @@ def generate_and_post_daily_requests():
     assigned_sim_tn_map = {}
     iccid_to_sim_row_map = {}
     cease_sim_items = []
+    reserved_iccids = set()
 
     for row_idx, row in enumerate(sim_rows[1:], start=2):
         if len(row) > max(sim_iccid_idx, sim_tn_idx, sim_state_idx):
@@ -294,6 +326,10 @@ def generate_and_post_daily_requests():
 
             if iccid and iccid.startswith("89"):
                 iccid_to_sim_row_map[iccid] = row_idx
+                if state in RESERVED_SIM_STATES:
+                    reserved_iccids.add(iccid)
+                    logger.info(f"🔒 ICCID {iccid} is {state} - left unchanged and excluded from NRT requests")
+                    continue
                 latest_p = latest_p_by_iccid.get(iccid) or latest_p_by_tn.get(clean_tn)
 
                 if latest_p:
@@ -374,6 +410,9 @@ def generate_and_post_daily_requests():
     if q_sync_cells:
         q_sheet.update_cells(q_sync_cells)
 
+    if reserved_iccids:
+        cease_items = [(tn, ic) for tn, ic in cease_items if ic not in reserved_iccids]
+
     # -------------------------------------------------------------------------
     # STEP 4: FILTER PROVISION ITEMS & MAP ALL ROW INDICES
     # -------------------------------------------------------------------------
@@ -392,7 +431,7 @@ def generate_and_post_daily_requests():
 
         if clean_tn in queue_waiting_tns or clean_tn in assigned_sim_tn_map:
             if prov_status not in ["DONE", "PROVISIONING_COMPLETED", "PROVISION_REQUESTED"]:
-                if iccid and iccid.startswith("89"):
+                if iccid and iccid.startswith("89") and iccid not in reserved_iccids:
                     provision_items.append((raw_phone, iccid))
                     provision_rows_indices.append(info['row_idx'])
 
