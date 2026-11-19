@@ -227,6 +227,33 @@ class NavigationBasePageMenuMap(BasePage):
             #print(block_dict)
             return block_dict
             
+    def _option_text(self, el):
+        """Selenium returns '' for elements it thinks are hidden (common in headless),
+        so fall back to textContent / innerText."""
+        for getter in (lambda: el.text, lambda: el.get_attribute("textContent"),
+                       lambda: el.get_attribute("innerText")):
+            try:
+                t = (getter() or "").strip()
+                if t:
+                    return t
+            except Exception:
+                pass
+        return ""
+
+    def _pick_dropdown_option(self, dropdown_options, text):
+        names = [self._option_text(o) for o in dropdown_options]
+        for i, n in enumerate(names, start=1):
+            print(f"{i}. {n}")
+        for el, n in zip(dropdown_options, names):
+            if n.lower() == text.lower():
+                try:
+                    el.click()
+                except Exception:
+                    self.driver.execute_script("arguments[0].click();", el)
+                return True
+        # Fail loudly: a silent miss means the search runs unfiltered and finds no blocks
+        raise RuntimeError(f"Dropdown option '{text}' not found. Options seen: {names}")
+
     def selectblockInventoryStatus(self,text):
         self.isElementDisplayed(locator=self._selectStatusDropDownField, locatorType="xpath")
         self.isElementPresent(locator=self._selectStatusDropDownField, locatorType="xpath")
@@ -234,17 +261,7 @@ class NavigationBasePageMenuMap(BasePage):
         self.sendKeysOnElement(text,locator=self._selectStatusDropDownField, locatorType="xpath")
         self.sendKeysOnElement(text, locator=self._type_select_status, locatorType="xpath")
         dropdown_options = self.getElementList(locator=self._select_status, locatorType="xpath")
-        for i, optionval in enumerate(dropdown_options, start=1):
-            print(f"{i}. {optionval.text.strip()}")
-            
-        for optionval in dropdown_options:
-            if optionval.text.strip() == text:   # replace with the option you want
-                optionval.click()
-                return True
-                
-        # If not found
-        print(f"Option '{text}' not found in dropdown")
-        return False
+        return self._pick_dropdown_option(dropdown_options, text)
 
 
     def selectblockInventorySource(self,text):
@@ -254,17 +271,7 @@ class NavigationBasePageMenuMap(BasePage):
         self.sendKeysOnElement(text,locator=self._selectSourceDropDownField, locatorType="xpath")
         self.sendKeysOnElement(text, locator=self._type_source_status, locatorType="xpath")
         dropdown_options = self.getElementList(locator=self._select_source, locatorType="xpath")
-        for i, optionval in enumerate(dropdown_options, start=1):
-            print(f"{i}. {optionval.text.strip()}")
-            
-        for optionval in dropdown_options:
-            if optionval.text.strip() == text:   # replace with the option you want
-                optionval.click()
-                return True
-                
-        # If not found
-        print(f"Option '{text}' not found in dropdown")
-        return False
+        return self._pick_dropdown_option(dropdown_options, text)
         
     def selectRequesterContainsField(self):
         dropdown = self.getElement(self._reqester_drop_down)
