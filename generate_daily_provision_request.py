@@ -24,6 +24,40 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 JSON_CREDENTIALS = os.path.join(BASE_DIR, "credentials.json")
 WORKBOOK_NAME = "Number Range Testing_MasterSheet"
 
+# -----------------------------------------------------------------------------
+# CLAIM-THEN-CONFIRM (patent Claim 1 / FIG. 9 steps 908-916, FIG. 15)
+# Before the Chat request is posted, each Priority row in the request gets a claim
+#   IN_PROGRESS|<run_id>|<YYYY-MM-DD HH:MM:SS>   in Column G (SIM Provisioning status).
+# The run reads the rows back and keeps only rows carrying its own run_id.
+#   post succeeded -> PROVISION_REQUESTED   post failed -> claim removed (blank)
+# A claim older than STALE_CLAIM_MINUTES is left by an interrupted run: reported for
+# review, never re-requested. A fresher claim belongs to a run still working: skipped.
+# -----------------------------------------------------------------------------
+import time as _time
+import uuid as _uuid
+CLAIM_PREFIX = "IN_PROGRESS"
+CLAIM_SETTLE_SECONDS = int(os.getenv("CLAIM_SETTLE_SECONDS", "5"))
+STALE_CLAIM_MINUTES = int(os.getenv("STALE_CLAIM_MINUTES", "60"))
+RUN_ID = f"{datetime.now():%Y%m%d%H%M%S}-{_uuid.uuid4().hex[:6]}"
+
+
+def _claim_value():
+    return f"{CLAIM_PREFIX}|{RUN_ID}|{datetime.now():%Y-%m-%d %H:%M:%S}"
+
+
+def _parse_claim(value):
+    v = str(value or "").strip()
+    if not v.upper().startswith(CLAIM_PREFIX):
+        return None, None
+    parts = v.split("|")
+    run_id = parts[1] if len(parts) > 1 else ""
+    try:
+        at = datetime.strptime(parts[2], "%Y-%m-%d %H:%M:%S") if len(parts) > 2 else None
+    except ValueError:
+        at = None
+    return run_id, at
+
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
@@ -212,6 +246,108 @@ def sync_test_results_from_priority(p_rows, q_sheet, preview=False):
     return len(changes)
 
 
+
+# =============================================================================
+# RE-TEST ON TICKET CLOSE (patent answer 6 / FIG. 3 "Incident resolved" edge)
+# A FAILED number keeps its SIM provisioned. When every failure ticket recorded for
+# it is closed, it goes back to testing:
+#   Test_Queue_Master  Test_Execution_Status FAILED -> QUEUED  (shield box runner picks it up)
+#   Priority tab       F marks cleared (x marks kept), Remarks gets a re-test note
+# "Closed" = every ticket in SNOW_Incident_INC is Resolved/Closed in SNOW_Ticket_Tracker.
+# Manual override: set Test_Execution_Status to RETEST to re-queue without a ticket check.
+# Set RETEST_PREVIEW=1 to log what would change without writing.
+# =============================================================================
+CLOSED_TICKET_STATES = {"RESOLVED", "CLOSED", "CLOSED COMPLETE", "CLOSED_COMPLETE", "COMPLETE", "COMPLETED"}
+MANUAL_RETEST_VALUES = {"RETEST", "READY_FOR_RETEST", "RE-TEST"}
+TICKET_RE = re.compile(r"\b(?:INC[A-Z]*\d{5,}|MOCK_[A-Z]+_\d+|MANUAL_[A-Z]+_\d+|REQ\d{5,}|RITM\d{5,})\b", re.I)
+
+
+def requeue_resolved_failures(wb, p_sheet, p_rows, q_sheet, reserved_iccids=(), preview=None):
+    preview = (os.getenv("RETEST_PREVIEW", "") in ("1", "true", "yes")) if preview is None else preview
+
+    # ticket states from SNOW_Ticket_Tracker
+    states = {}
+    try:
+        t_rows = wb.worksheet("SNOW_Ticket_Tracker").get_all_values()
+        th = [h.strip().lower() for h in t_rows[0]] if t_rows else []
+        ti, si = th.index("ticket_number"), th.index("snow_state")
+        for r in t_rows[1:]:
+            if len(r) > max(ti, si) and r[ti].strip():
+                states[r[ti].strip().upper()] = r[si].strip().upper()
+    except Exception as e:
+        logger.warning(f"Re-test check: SNOW_Ticket_Tracker not readable ({e}); only manual RETEST rows are handled.")
+
+    q_rows = q_sheet.get_all_values()
+    if not q_rows:
+        return 0
+    qh = [h.strip().lower() for h in q_rows[0]]
+    qc = lambda n: next((i for i, h in enumerate(qh) if h == n), None)
+    q_tn, q_iccid, q_exec = qc("phone_number"), qc("assigned_iccid"), qc("test_execution_status")
+    q_inc, q_reason, q_ts = qc("snow_incident_inc"), qc("failure_reason"), qc("last_sync_timestamp")
+    if None in (q_tn, q_iccid, q_exec):
+        logger.warning("Re-test check skipped: Test_Queue_Master columns not found.")
+        return 0
+
+    # latest Priority row per TN (for clearing F marks)
+    hdr_i = _find_header_row(p_rows)
+    headers = [h.strip() for h in p_rows[hdr_i]] if hdr_i is not None else []
+    low = [h.lower() for h in headers]
+    pc = lambda *k: next((i for i, h in enumerate(low) if any(x in h for x in k)), None)
+    p_tn, p_iccid, p_rem = pc("arnold", "internal test", "phone"), pc("iccid"), pc("remarks")
+    result_cols = [i for i, h in enumerate(headers) if RESULT_HEADER_RE.search(h)]
+    p_by_tn = {}
+    if hdr_i is not None and p_tn is not None:
+        for n, row in enumerate(p_rows[hdr_i + 1:], start=hdr_i + 2):
+            tn = re.sub(r"[^\d]", "", row[p_tn] if p_tn < len(row) else "")[-10:]
+            if tn:
+                p_by_tn[tn] = (n, row)
+
+    today = datetime.now().strftime("%Y-%m-%d")
+    now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    q_cells, p_cells, done = [], [], []
+    for r_idx, row in enumerate(q_rows[1:], start=2):
+        g = lambda i: row[i].strip() if i is not None and i < len(row) else ""
+        exec_s, iccid = g(q_exec).upper(), g(q_iccid)
+        manual = exec_s in MANUAL_RETEST_VALUES
+        if exec_s != "FAILED" and not manual:
+            continue
+        if iccid in reserved_iccids:
+            continue
+        tickets = [t.upper() for t in TICKET_RE.findall(g(q_inc))]
+        if not manual:
+            if not tickets:
+                continue  # no failure ticket recorded: wait for a person (set RETEST)
+            open_t = [t for t in tickets if states.get(t) not in CLOSED_TICKET_STATES]
+            if open_t:
+                continue  # at least one failure ticket still open (or not tracked yet)
+        why = "set to RETEST by hand" if manual else f"{', '.join(tickets)} closed"
+        q_cells.append(Cell(row=r_idx, col=q_exec + 1, value="QUEUED"))
+        if q_reason is not None:
+            q_cells.append(Cell(row=r_idx, col=q_reason + 1, value=f"Re-test queued {today} ({why}). Previous: {g(q_reason)}"[:500]))
+        if q_ts is not None:
+            q_cells.append(Cell(row=r_idx, col=q_ts + 1, value=now_str))
+        tn = re.sub(r"[^\d]", "", g(q_tn))[-10:]
+        pr = p_by_tn.get(tn)
+        if pr and (p_iccid is None or not iccid or (p_iccid < len(pr[1]) and pr[1][p_iccid].strip() == iccid)):
+            n, prow = pr
+            for c in result_cols:
+                if c < len(prow) and prow[c].strip().upper() in FAIL_MARKS:
+                    p_cells.append(Cell(row=n, col=c + 1, value=""))
+            if p_rem is not None:
+                old = prow[p_rem].strip() if p_rem < len(prow) else ""
+                p_cells.append(Cell(row=n, col=p_rem + 1, value=(old + " | " if old else "") + f"Re-test queued {today} ({why})"))
+        done.append(f"Row {r_idx} {g(q_tn)}: FAILED -> QUEUED ({why})")
+
+    for d in done:
+        logger.info(("[PREVIEW] " if preview else "Re-test: ") + d)
+    if not done:
+        logger.info("Re-test: no failed numbers with closed tickets.")
+    elif not preview:
+        q_sheet.update_cells(q_cells)
+        if p_cells:
+            p_sheet.update_cells(p_cells)
+    return len(done)
+
 # SIM states held outside NRT (e.g. lent for other testing). These SIMs are never
 # reset to AVAILABLE, assigned, provisioned or ceased by this script.
 RESERVED_SIM_STATES = {"RESERVED", "ON_HOLD", "HOLD", "DO_NOT_USE"}
@@ -284,6 +420,7 @@ def generate_and_post_daily_requests():
                 continue
 
             row_info = {
+                'prov_raw': row[p_prov_idx].strip(),
                 'row_idx': idx,
                 'raw_phone': raw_phone,
                 'clean_phone': clean_phone,
@@ -356,6 +493,10 @@ def generate_and_post_daily_requests():
     # so passed numbers are picked up for the cease request below.
     sync_test_results_from_priority(p_rows, q_sheet)
 
+    # STEP 2c: failed numbers whose failure tickets are all closed go back to testing
+    if requeue_resolved_failures(wb, p_sheet, p_rows, q_sheet, reserved_iccids=reserved_iccids):
+        p_rows = p_sheet.get_all_values()  # F marks were cleared; re-read before later steps
+
     # -------------------------------------------------------------------------
     # STEP 3: READ QUEUE MASTER FOR PASSED CEASE TRIGGERS & SYNC CEASED STATUS
     # -------------------------------------------------------------------------
@@ -419,6 +560,7 @@ def generate_and_post_daily_requests():
     provision_items = []
     provision_rows_indices = []
     cease_rows_indices = []
+    stale_claims = []
 
     for clean_tn, info in latest_p_by_tn.items():
         prov_status = info['prov_status']
@@ -428,6 +570,14 @@ def generate_and_post_daily_requests():
 
         if cease_status in ["DONE", "CEASED", "COMPLETED"]:
             continue
+
+        claim_run, claimed_at = _parse_claim(info.get('prov_raw', ''))
+        if claim_run is not None:
+            age = (datetime.now() - claimed_at).total_seconds() / 60 if claimed_at else None
+            if age is None or age >= STALE_CLAIM_MINUTES:
+                stale_claims.append((info['row_idx'], raw_phone, claim_run or "unknown run",
+                                     f"{age:.0f} min ago" if age is not None else "no timestamp"))
+            continue  # claimed by another run (fresh) or interrupted (stale): never re-requested here
 
         if clean_tn in queue_waiting_tns or clean_tn in assigned_sim_tn_map:
             if prov_status not in ["DONE", "PROVISIONING_COMPLETED", "PROVISION_REQUESTED"]:
@@ -455,6 +605,33 @@ def generate_and_post_daily_requests():
     end_row = max(all_row_indices) if all_row_indices else start_row
 
     logger.info(f"🎯 Filtered Request Summary: {len(provision_items)} Provision item(s) and {len(cease_items)} PASSED Cease item(s) (Priority Rows {start_row}-{end_row}).")
+
+    if stale_claims:
+        for r_idx, tn, run, age in stale_claims:
+            logger.warning(f"⚠️ Priority row {r_idx} ({tn}) still claimed by run {run} ({age}) with no request "
+                           "recorded - left for review, not re-requested. Check the Chat space, then set "
+                           "Column G to PROVISION_REQUESTED or clear it.")
+
+    # --- CLAIM FIRST: mark each provision row before the request is posted ---
+    if provision_rows_indices:
+        claim = _claim_value()
+        p_sheet.update_cells([Cell(row=r, col=p_prov_idx + 1, value=claim) for r in provision_rows_indices])
+        _time.sleep(CLAIM_SETTLE_SECONDS)
+        fresh = p_sheet.get_all_values()
+        kept_rows, kept_items, lost = [], [], []
+        for r_idx, item in zip(provision_rows_indices, provision_items):
+            v = fresh[r_idx - 1][p_prov_idx] if r_idx - 1 < len(fresh) and p_prov_idx < len(fresh[r_idx - 1]) else ""
+            if _parse_claim(v)[0] == RUN_ID:
+                kept_rows.append(r_idx); kept_items.append(item)
+            else:
+                lost.append(r_idx)
+        if lost:
+            logger.warning(f"⚠️ Run {RUN_ID} backed off {len(lost)} row(s) claimed by another run: {lost}")
+        provision_rows_indices, provision_items = kept_rows, kept_items
+        logger.info(f"🔒 Run {RUN_ID} claimed {len(provision_rows_indices)} provision row(s): {provision_rows_indices}")
+        if not provision_items and not cease_items:
+            logger.info("ℹ️ Nothing left to request after read-back. Exiting.")
+            sys.exit(0)
 
     posted = notifier.send_batch_provision_cease_request(
         cease_items=cease_items,
@@ -498,9 +675,14 @@ def generate_and_post_daily_requests():
         archive_completed_queue_rows(wb, q_sheet, q_prov_idx)
 
         logger.info("🎉 Execution completed successfully!")
+
         sys.exit(0)
     else:
         logger.error("❌ Failed to post message to GChat webhook.")
+        if provision_rows_indices:
+            # Post failed: release the claims so the next run requests these rows again.
+            p_sheet.update_cells([Cell(row=r, col=p_prov_idx + 1, value="") for r in provision_rows_indices])
+            logger.error(f"🔓 Released claims on rows {provision_rows_indices} for the next run.")
         sys.exit(1)
 
 if __name__ == "__main__":
